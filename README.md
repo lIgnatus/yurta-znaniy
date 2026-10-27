@@ -2,7 +2,10 @@
 
 Одностраничный сайт образовательного проекта Елены Владимировны Нагимовой «Юрта знаний» (башк. «Белем тирмәһе»): настольно-дидактические игры для изучения башкирского языка и культуры родного края.
 
-Сайт статический: HTML, CSS и немного JavaScript, без сборки и без сервера. Подходит для GitHub Pages.
+**Сайт:** https://lignatus.github.io/yurta-znaniy/
+**Репозиторий:** https://github.com/lIgnatus/yurta-znaniy
+
+Сайт статический: HTML, CSS и немного JavaScript, без сборки и без сервера. Работает на GitHub Pages.
 
 ## Что на странице
 
@@ -42,15 +45,11 @@ PRODUCT.md, DESIGN.md   описание проекта и дизайн-сист
 - **Новое письмо.** Положите скан в `assets/img/letters/` в двух размерах (около 1240 px и превью 520 px) и скопируйте блок `<li class="letter">…</li>`.
 - **Языки в главной карточке.** Это кнопки внутри `.langcard__tabs`. Слово задаётся в `data-word`, название языка в `data-name`, статус в `data-status` («в продаже» или «в работе»).
 
-## Как выложить на GitHub Pages
+## Публикация
 
-1. Создайте репозиторий на GitHub, например `yurta-znaniy`.
-2. Загрузите в него содержимое этой папки (или выполните `git push`, если папка уже связана с репозиторием).
-3. В репозитории откройте **Settings → Pages → Build and deployment**, выберите **Deploy from a branch**, ветку `main` и папку `/ (root)`, нажмите **Save**.
-4. Через минуту-две сайт появится по адресу `https://<имя-аккаунта>.github.io/yurta-znaniy/`.
-5. После публикации замените в `index.html` адрес картинки превью (`og:image`) на полный: `https://<имя-аккаунта>.github.io/yurta-znaniy/assets/img/og-image.jpg`. Иначе WhatsApp и Telegram могут не показать картинку.
+Сайт публикуется через GitHub Pages из ветки `main`, папка `/ (root)` (Settings → Pages → Deploy from a branch). Каждый `git push` в `main` обновляет сайт примерно за минуту-две.
 
-Свой домен подключается там же, в Settings → Pages → Custom domain.
+Если подключите свой домен (Settings → Pages → Custom domain), поменяйте в `index.html` три адреса: `og:url`, `og:image` и `canonical`. Через них WhatsApp и Telegram показывают превью ссылки.
 
 ## Что стоит заменить или проверить
 
