@@ -1,0 +1,12 @@
+# исходные материалы проекта (PDF, docx) — хранятся локально
+Источники/
+
+# локальные настройки и служебные файлы
+.claude/
+.playwright-mcp/
+.impeccable/review/
+.impeccable/config.local.json
+Thumbs.db
+desktop.ini
+.DS_Store
+.impeccable/questions/

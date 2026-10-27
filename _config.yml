@@ -1,0 +1,5 @@
+# GitHub Pages: публикуем только сам сайт, служебные описания остаются в репозитории
+exclude:
+  - README.md
+  - PRODUCT.md
+  - DESIGN.md

@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Юрта знаний — настольные игры для изучения башкирского языка и культуры</title>
+  <meta name="description" content="«Юрта знаний» — серия настольно-дидактических игр Елены Нагимовой: башкирский, татарский и английский языки, культура и история родного края через игру. Одобрено учебно-методическим советом Минобрнауки РБ.">
+  <meta name="theme-color" content="#0E7A41">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Юрта знаний — играя, изучай свой край">
+  <meta property="og:description" content="Настольные игры для изучения башкирского языка и культуры родного края. Ищем партнёров для новых регионов и языков.">
+  <meta property="og:image" content="assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.png" type="image/png" sizes="64x64">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/podkova-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/golos-text-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Перейти к содержанию</a>
+
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.8 7.05L4 20l1.45-4.1A8 8 0 1 1 20 11.5Z"/><path d="M9.2 9.3c.3 2.2 2.2 4.4 4.9 5.2l1.3-1.2-1.8-1-.9.8a4.3 4.3 0 0 1-2.3-2.3l.8-.9-1-1.8Z"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h3.2l1.6 4-2 1.3a10.5 10.5 0 0 0 4.9 4.9l1.3-2 4 1.6V17a2 2 0 0 1-2.2 2A15 15 0 0 1 3 6.2 2 2 0 0 1 5 4Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.3"/></symbol>
+    <symbol id="i-seal" viewBox="0 0 24 24"><circle cx="12" cy="9.5" r="5.5"/><path d="m9.6 9.6 1.6 1.6 3.2-3.3M8.5 14.3 7 21l5-2.6 5 2.6-1.5-6.7"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-prev" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></symbol>
+    <symbol id="i-next" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-zoom" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="m15 15 5 5M10.5 8v5M8 10.5h5"/></symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="wrap site-header__bar">
+      <a class="brand" href="#top" aria-label="Юрта знаний — в начало">
+        <img class="brand__mark" src="favicon.svg" alt="" width="40" height="40">
+        <span class="brand__name">Юрта знаний <span class="brand__sub" lang="ba">Белем тирмәһе</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Разделы">
+        <ul>
+          <li><a href="#games">Игры</a></li>
+          <li><a href="#method">Методика</a></li>
+          <li><a href="#letters">Благодарности</a></li>
+          <li><a href="#author">Автор</a></li>
+          <li><a href="#partners">Партнёрам</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn--yellow btn--small site-header__cta" href="https://wa.me/79177521702?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%95%D0%BB%D0%B5%D0%BD%D0%B0!%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20%C2%AB%D0%AE%D1%80%D1%82%D0%B0%20%D0%B7%D0%BD%D0%B0%D0%BD%D0%B8%D0%B9%C2%BB." target="_blank" rel="noopener">
+        <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg><span class="site-header__cta-text">Написать Елене</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="wrap hero__grid">
+        <div class="hero__head">
+          <h1 class="hero__title">Играя&nbsp;— изучай свой&nbsp;край</h1>
+        </div>
+        <div class="hero__body">
+          <p class="hero__lead">«Юрта знаний»&nbsp;— серия настольно-дидактических игр, в которых дети учат башкирский язык и&nbsp;узнают культуру родного края. Один формат подходит любому народу и&nbsp;языку&nbsp;— мы ищем партнёров, чтобы сделать такие игры для новых регионов.</p>
+          <ul class="hero__proof">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-seal"/></svg>Одобрено учебно-методическим советом при Минобрнауки Республики Башкортостан</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-seal"/></svg>Инновационная площадка БГПУ им.&nbsp;М.&nbsp;Акмуллы</li>
+          </ul>
+          <div class="hero__actions">
+            <a class="btn btn--yellow" href="#partners">Стать партнёром</a>
+            <a class="btn btn--ghost" href="#games">Смотреть 18&nbsp;игр</a>
+          </div>
+        </div>
+
+        <div class="langcard" data-langcard>
+          <div class="langcard__tabs" role="tablist" aria-label="Слово «семья» на разных языках">
+            <button class="tab" role="tab" id="lt-ru" aria-selected="true" aria-controls="lc-panel" data-word="СЕМЬЯ" data-lang="ru" data-name="русский язык" data-status="в продаже">Рус</button>
+            <button class="tab" role="tab" id="lt-ba" aria-selected="false" aria-controls="lc-panel" tabindex="-1" data-word="ҒАИЛӘ" data-lang="ba" data-name="башҡорт теле" data-status="в продаже">Баш</button>
+            <button class="tab" role="tab" id="lt-tt" aria-selected="false" aria-controls="lc-panel" tabindex="-1" data-word="ГАИЛӘ" data-lang="tt" data-name="татар теле" data-status="в продаже">Тат</button>
+            <button class="tab" role="tab" id="lt-en" aria-selected="false" aria-controls="lc-panel" tabindex="-1" data-word="FAMILY" data-lang="en" data-name="English" data-status="в продаже">Eng</button>
+            <button class="tab" role="tab" id="lt-uz" aria-selected="false" aria-controls="lc-panel" tabindex="-1" data-word="OILA" data-lang="uz" data-name="oʻzbek tili" data-status="в работе">Oʻzb</button>
+            <button class="tab" role="tab" id="lt-kk" aria-selected="false" aria-controls="lc-panel" tabindex="-1" data-word="ОТБАСЫ" data-lang="kk" data-name="қазақ тілі" data-status="в работе">Қаз</button>
+            <button class="tab" role="tab" id="lt-be" aria-selected="false" aria-controls="lc-panel" tabindex="-1" data-word="СЯМ’Я" data-lang="be" data-name="беларуская мова" data-status="в работе">Бел</button>
+            <button class="tab tab--plus" role="tab" id="lt-plus" aria-selected="false" aria-controls="lc-panel" tabindex="-1" data-plus aria-label="Ваш язык"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
+          </div>
+          <div class="langcard__deck" aria-hidden="true"><span></span><span></span></div>
+          <div class="langcard__card" id="lc-panel" role="tabpanel" aria-labelledby="lt-ru">
+            <div class="langcard__face">
+              <p class="langcard__word" lang="ru" data-word>СЕМЬЯ</p>
+              <p class="langcard__name"><span data-name>русский язык</span><span class="status" data-status>в продаже</span></p>
+              <p class="langcard__note"><strong>Карточки «Семья»:</strong> 12&nbsp;карточек, на&nbsp;обороте стихи и&nbsp;загадки на&nbsp;трёх языках</p>
+              <img class="langcard__art" src="assets/img/brand/yurta-deti-sm.webp" alt="" width="385" height="440">
+            </div>
+            <div class="langcard__plus" hidden>
+              <p class="langcard__word langcard__word--plus">Ваш язык?</p>
+              <p class="langcard__plus-text">Сделаем такие же игры для вашего народа и&nbsp;региона: язык, история, орнамент, праздники.</p>
+              <a class="btn btn--ink" href="#partners">Обсудить с&nbsp;Еленой</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What it is -->
+    <section class="project section" id="project" aria-labelledby="project-title">
+      <div class="wrap project__grid">
+        <div class="project__text">
+          <h2 id="project-title" class="h2">Как ребёнок узнаёт свой&nbsp;край? Через&nbsp;игру</h2>
+          <p class="lead">Ребёнок не&nbsp;воспринимает игру как обязанность&nbsp;— для него это приключение. Пока он играет, он развивает память, внимание, мышление, наблюдательность и&nbsp;воображение, а&nbsp;заодно узнаёт язык, историю и&nbsp;традиции своего народа и&nbsp;соседей.</p>
+          <p class="triad">
+            <span>Слово приходит через <em>рисунок</em>,</span>
+            <span>история&nbsp;— через <em>орнамент</em>,</span>
+            <span>знания&nbsp;— через <em>игру</em>.</span>
+          </p>
+          <p>Игры воспитывают культуру межнационального общения: уважение к&nbsp;традициям, дружбу, равенство и&nbsp;взаимопомощь. Ребёнок учится видеть в&nbsp;другом человеке не&nbsp;«чужого», а&nbsp;интересного и&nbsp;достойного уважения.</p>
+        </div>
+        <figure class="alphabet" aria-labelledby="alphabet-cap">
+          <ul class="alphabet__grid" lang="ba">
+            <li>Ә</li><li>Ө</li><li>Ү</li><li>Ғ</li><li>Ҡ</li><li>Ң</li><li>Ҙ</li><li>Ҫ</li><li>Һ</li>
+          </ul>
+          <figcaption id="alphabet-cap">В башкирском алфавите 42&nbsp;буквы: 33&nbsp;общих с&nbsp;русским и&nbsp;ещё девять своих. В&nbsp;играх серии дети встречают их в&nbsp;словах на&nbsp;карточках.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Catalogue -->
+    <section class="games section" id="games" aria-labelledby="games-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="games-title" class="h2">Игры и&nbsp;пособия, которые можно купить</h2>
+          <p class="section-head__note">Для детских садов, школ и&nbsp;семей. Цены&nbsp;— как в&nbsp;интернет-магазине <a href="http://alenmart.ru/" target="_blank" rel="noopener">alenmart.ru</a> на&nbsp;октябрь 2026&nbsp;года.</p>
+        </div>
+
+        <div class="filter" role="group" aria-label="Показать игры по языку">
+          <button class="tab is-active" type="button" aria-pressed="true" data-filter="all">Все <span>18</span></button>
+          <button class="tab" type="button" aria-pressed="false" data-filter="ba">Башкирский <span>10</span></button>
+          <button class="tab" type="button" aria-pressed="false" data-filter="tt">Татарский <span>2</span></button>
+          <button class="tab" type="button" aria-pressed="false" data-filter="en">Английский <span>3</span></button>
+        </div>
+
+        <div class="games__grid" data-games>
+          <article class="game game--wide game--feature" data-lang="" data-deal>
+            <div class="game__media"><img src="assets/img/games/ajda-igrat.webp" alt="Коробка игры-викторины «Айда играть. Башкортостан» с игровым полем-шестиугольником" width="760" height="537" loading="lazy" decoding="async"></div>
+            <div class="game__body">
+              <h3 class="game__title">Игра-викторина «Айда играть. Башкортостан»</h3>
+              <p class="game__text">Викторина о&nbsp;республике в&nbsp;шести категориях: символы городов и&nbsp;районов, памятники, уникальная природа, народы и&nbsp;их обычаи, национальные праздники, литература и&nbsp;искусство.</p>
+              <div class="game__foot"><span class="price">2&nbsp;500&nbsp;₽</span><a class="buy" href="http://alenmart.ru/glavnaya/product/igra-viktorina-ajda-igrat-bashkortostan" target="_blank" rel="noopener">Купить<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            </div>
+          </article>
+
+          <article class="game" data-lang="ru ba en" data-deal>
+            <div class="game__media"><img src="assets/img/games/semya-ba.webp" alt="Набор карточек «Семья» на русском, башкирском и английском" width="442" height="640" loading="lazy" decoding="async"></div>
+            <div class="game__body">
+              <h3 class="game__title">«Семья»: 12 карточек на трёх языках</h3>
+              <ul class="langs" aria-label="Языки"><li>Рус</li><li>Баш</li><li>Eng</li></ul>
+              <p class="game__text">Все члены семьи по-русски, по-башкирски и&nbsp;по-английски, на&nbsp;обороте стихи и&nbsp;загадки, карточка «генеалогическое древо».</p>
+              <div class="game__foot"><span class="price">850&nbsp;₽</span><a class="buy" href="http://alenmart.ru/glavnaya/product/semya-12-naglyadno-didakticheskih-kartochek-s-zanyatiyami-na-russkom-bashkirskom-i-anglijskom-yazyke" target="_blank" rel="noopener">Купить<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            </div>
+          </article>
+
+          <article class="game" data-lang="ru ba" data-deal>
+            <div class="game__media"><img src="assets/img/games/ya-govoryu.webp" alt="Коробка игры «Я говорю на башкирском языке!»" width="760" height="573" loading="lazy" decoding="async"></div>
+            <div class="game__body">
+              <h3 class="game__title">«Я говорю на башкирском языке!»</h3>
+              <ul class="langs" aria-label="Языки"><li>Рус</li><li>Баш</li></ul>
+              <p class="game__text">18 вариантов игры: от первых слов до&nbsp;предложений из&nbsp;двух–пяти слов по&nbsp;опорным схемам.</p>
+              <div class="game__foot"><span class="price">850&nbsp;₽</span><a class="buy" href="http://alenmart.ru/glavnaya/product/razvivayushchaya-igra-ya-govoryu-na-bashkirskom-yazyke" target="_blank" rel="noopener">Купить<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            </div>
+          </article>
+
+          <article class="game" data-lang="ru ba" data-deal>
+            <div class="game__media"><img src="assets/img/games/parovozik.webp" alt="Коробка лото «Волшебный паровозик»" width="760" height="569" loading="lazy" decoding="async"></div>
+            <div class="game__body">
+              <h3 class="game__title">Лото «Волшебный паровозик»</h3>
+              <ul class="langs" aria-label="Языки"><li>Рус</li><li>Баш</li></ul>
+              <p class="game__text">Словарный минимум в&nbsp;играх «Кто вперёд?», «Назови предмет», «Четвёртый лишний»: 56&nbsp;карточек-картинок и&nbsp;134&nbsp;карточки с&nbsp;подписями.</p>
+              <div class="game__foot"><span class="price">850&nbsp;₽</span><a class="buy" href="http://alenmart.ru/glavnaya/product/razvivayushchaya-igra-volshebnyj-parovozik" target="_blank" rel="noopener">Купить<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            </div>
+          </article>
+
+          <article class="game" data-lang="ba" data-deal>
+            <div class="game__media"><img src="assets/img/games/uchu-bashkirskie.webp" alt="Коробка и круглые карточки игры «Учу башкирские слова»" width="760" height="330" loading="lazy" decoding="async"></div>
+            <div class="game__body">
+              <h3 class="game__title">«Учу башкирские слова»</h3>
+              <ul class="langs" aria-label="Языки"><li>Баш</li></ul>
+              <p class="game__text">55 карточек: на&nbsp;любых двух всегда есть одна общая картинка или слово. Найди, назови и&nbsp;сбрось быстрее всех.</p>
+              <div class="game__foot"><span class="price">500&nbsp;₽</span><a class="buy" href="http://alenmart.ru/glavnaya/product/nastolnaya-igra-uchu-bashkirskie-slova" target="_blank" rel="noopener">Купить<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            </div>
+          </article>
+
+          <article class="game" data-lang="ru ba" data-deal>
+            <div class="game__media"><img src="assets/img/games/simvoly-rb.webp" alt="Коробка игры «Символы Республики Башкортостан»" width="760" height="566" loading="lazy" decoding="async"></div>
+            <div class="game__body">
+              <h3 class="game__title">«Символы Республики Башкортостан»</h3>
+              <ul class="langs" aria-label="Языки"><li>Рус</li><li>Баш</li></ul>
+              <p class="game__text">Викторина о&nbsp;карте, гимне, гербе и&nbsp;флаге республики и&nbsp;национальных костюмах её&nbsp;народов.</p>
+              <div class="game__foot"><span class="price">850&nbsp;₽</span><a class="buy" href="http://alenmart.ru/glavnaya/product/razvivayushchaya-igra-simvoly-respubliki-bashkortostan" target="_blank" rel="noopener">Купить<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            </div>
+          </article>
+
+          <article class="game" data-lang="ru ba" data-deal>
+            <div class="game__media"><img src="assets/img/games/puteshestvie-rb.webp" alt="Коробка игры «Путешествие по Республике Башкортостан» с гербами районов" width="760" height="572" loading="lazy" decoding="async"></div>
+            <div class="game__body">
+              <h3 class="game__title">«Путешествие по Республике Башкортостан»</h3>
+              <ul class="langs" aria-label="Языки"><li>Рус</li><li>Баш</li></ul>
+              <p class="game__text">Районы и&nbsp;города республики: достопримечательности, известные люди, памятные места.</p>
+              <div class="game__foot"><span class="price">1&nbsp;500&nbsp;₽</span><a class="buy" href="http://alenmart.ru/glavnaya/product/razvivayushchaya-igra-puteshestvie-po-respublike-bashkortostan" target="_blank" rel="noopener">Купить<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            </div>
+          </article>
+
+          <article class="game" data-lang="ru ba" data-deal>
+            <div class="game__media"><img src="assets/img/games/moj-bashkortostan.webp" alt="Коробка умной мозаики «Мой Башкортостан!»" width="760" height="494" loading="lazy" decoding="async"></div>
+            <div class="game__body">
+              <h3 class="game__title">Умная мозаика «Мой Башкортостан!»</h3>
+              <ul class="langs" aria-label="Языки"><li>Рус</li><li>Баш</li></ul>
+              <p class="game__text">История и&nbsp;культура республики в&nbsp;формате мозаики: внимание, память, мелкая моторика.</p>
+              <div class="game__foot"><span class="price">600&nbsp;₽</span><a class="buy" href="http://alenmart.ru/glavnaya/product/razvivayushchaya-igra-moj-bashkortostan" target="_blank" rel="noopener">Купить<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            </div>
+          </article>
+
+          <article class="game" data-lang="ru ba" data-deal>
+            <div class="game__media"><img src="assets/img/games/ufa-450.webp" alt="Коробка игры «Уфа — 450 лет» с куницей и треугольные карточки мозаики" width="760" height="384" loading="lazy" decoding="async"></div>
+            <div class="game__body">
+              <h3 class="game__title">«Уфа» к&nbsp;450-летию столицы</h3>
+              <ul class="langs" aria-label="Языки"><li>Рус</li><li>Баш</li></ul>
+              <p class="game__text">Мозаика из&nbsp;треугольных карточек об&nbsp;истории и&nbsp;культуре столицы республики.</p>
+              <div class="game__foot"><span class="price">500&nbsp;₽</span><a class="buy" href="http://alenmart.ru/glavnaya/product/nastolnaya-igra-ufa-450-let" target="_blank" rel="noopener">Купить<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            </div>
+          </article>
+
+          <article class="game" data-lang="ru ba" data-deal>
+            <div class="game__media"><img src="assets/img/games/ornamenty.webp" alt="Коробка игры «Орнаменты Башкортостана»" width="604" height="640" loading="lazy" decoding="async"></div>
+            <div class="game__body">
+              <h3 class="game__title">«Орнаменты Башкортостана»</h3>
+              <ul class="langs" aria-label="Языки"><li>Рус</li><li>Баш</li></ul>
+              <p class="game__text">Лото, мозаика, узоры по&nbsp;образцу и&nbsp;«Продолжи цепочку»: чем отличается башкирский орнамент.</p>
+              <div class="game__foot"><span class="price">650&nbsp;₽</span><a class="buy" href="http://alenmart.ru/glavnaya/product/razvivayushchaya-igra-ornamenty-bashkortostana" target="_blank" rel="noopener">Купить<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            </div>
+          </article>
+
+          <article class="game" data-lang="" data-deal>
+            <div class="game__media"><img src="assets/img/games/narody.webp" alt="Пособие «Народы Башкортостана» с карточками национальных костюмов" width="443" height="640" loading="lazy" decoding="async"></div>
+            <div class="game__body">
+              <h3 class="game__title">Пособие «Народы Башкортостана»</h3>
+              <p class="game__text">Башкиры, русские, татары, чуваши, марийцы, удмурты, мордва и&nbsp;другие народы республики: костюмы, обычаи, жизнь по&nbsp;соседству.</p>
+              <div class="game__foot"><span class="price">700&nbsp;₽</span><a class="buy" href="http://alenmart.ru/glavnaya/product/didakticheskoe-posobie-narody-bashkortostana" target="_blank" rel="noopener">Купить<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            </div>
+          </article>
+
+          <article class="game" data-lang="ru tt en" data-deal>
+            <div class="game__media"><img src="assets/img/games/semya-tt.webp" alt="Набор карточек «Семья» на русском, татарском и английском" width="443" height="640" loading="lazy" decoding="async"></div>
+            <div class="game__body">
+              <h3 class="game__title">«Семья» с&nbsp;татарским языком</h3>
+              <ul class="langs" aria-label="Языки"><li>Рус</li><li>Тат</li><li>Eng</li></ul>
+              <p class="game__text">Тот же набор из&nbsp;12 карточек: русский, татарский и&nbsp;английский.</p>
+              <div class="game__foot"><span class="price">850&nbsp;₽</span><a class="buy" href="http://alenmart.ru/glavnaya/product/didakticheskie-kartochki-dlya-obucheniya-na-russkom-tatarskom-anglijskom-yazykah-tema-semya" target="_blank" rel="noopener">Купить<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            </div>
+          </article>
+
+          <article class="game" data-lang="tt" data-deal>
+            <div class="game__media"><img src="assets/img/games/uchim-tatarskie.webp" alt="Коробка и круглые карточки игры «Учим татарские слова»" width="760" height="330" loading="lazy" decoding="async"></div>
+            <div class="game__body">
+              <h3 class="game__title">«Учим татарские слова»</h3>
+              <ul class="langs" aria-label="Языки"><li>Тат</li></ul>
+              <p class="game__text">55 карточек с&nbsp;предметами, животными и&nbsp;татарскими словами: кто быстрее найдёт пару.</p>
+              <div class="game__foot"><span class="price">500&nbsp;₽</span><a class="buy" href="http://alenmart.ru/glavnaya/product/nastolnaya-igra-uchim-tatarskie-slova" target="_blank" rel="noopener">Купить<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            </div>
+          </article>
+
+          <article class="game" data-lang="ru en" data-deal>
+            <div class="game__media"><img src="assets/img/games/domslov.webp" alt="Коробка и карточки игры «ДомСлов»" width="760" height="372" loading="lazy" decoding="async"></div>
+            <div class="game__body">
+              <h3 class="game__title">«ДомСлов»</h3>
+              <ul class="langs" aria-label="Языки"><li>Рус</li><li>Eng</li></ul>
+              <p class="game__text">Обобщающие слова и&nbsp;классификация предметов: базовый словарь на&nbsp;русском и&nbsp;английском.</p>
+              <div class="game__foot"><span class="price">500&nbsp;₽</span><a class="buy" href="http://alenmart.ru/glavnaya/product/nastolnaya-igra-domslov-na-russkom-i-anglijskom-yazyke-1" target="_blank" rel="noopener">Купить<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            </div>
+          </article>
+
+          <article class="game" data-lang="" data-deal>
+            <div class="game__media"><img src="assets/img/games/raskraska-ba-a4.webp" alt="Обложка раскраски «Любимый край — Башкортостан»" width="443" height="640" loading="lazy" decoding="async"></div>
+            <div class="game__body">
+              <h3 class="game__title">Раскраска «Любимый край&nbsp;— Башкортостан», А4</h3>
+              <p class="game__text">Символы республики и&nbsp;национальные костюмы: раскрашиваем по&nbsp;образцу, запоминаем узоры и&nbsp;цвета.</p>
+              <div class="game__foot"><span class="price">450&nbsp;₽</span><a class="buy" href="http://alenmart.ru/glavnaya/product/raskraska-bolshaya-lyubimyj-kraj-bashkortostan" target="_blank" rel="noopener">Купить<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            </div>
+          </article>
+
+          <article class="game" data-lang="ru ba" data-deal>
+            <div class="game__media"><img src="assets/img/games/raskraska-a5.webp" alt="Обложка раскраски «Любимый край» на русском и башкирском" width="447" height="640" loading="lazy" decoding="async"></div>
+            <div class="game__body">
+              <h3 class="game__title">Раскраска «Любимый край», А5</h3>
+              <ul class="langs" aria-label="Языки"><li>Рус</li><li>Баш</li></ul>
+              <p class="game__text">Раскраски с&nbsp;развивающими заданиями: речь, мелкая моторика, зрительное восприятие.</p>
+              <div class="game__foot"><span class="price">300&nbsp;₽</span><a class="buy" href="http://alenmart.ru/glavnaya/product/raskraska-lyubimyj-kraj" target="_blank" rel="noopener">Купить<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            </div>
+          </article>
+
+          <article class="game" data-lang="" data-deal>
+            <div class="game__media"><img src="assets/img/games/raskraska-tt-a4.webp" alt="Обложка раскраски «Любимый край — Татарстан»" width="455" height="640" loading="lazy" decoding="async"></div>
+            <div class="game__body">
+              <h3 class="game__title">Раскраска «Любимый край&nbsp;— Татарстан», А4</h3>
+              <p class="game__text">22 страницы: пять народов Татарстана, символы республики, национальные блюда и&nbsp;музыкальные инструменты.</p>
+              <div class="game__foot"><span class="price">450&nbsp;₽</span><a class="buy" href="http://alenmart.ru/glavnaya/product/raskraska-lyubimyj-kraj-tatarstan-format-a4" target="_blank" rel="noopener">Купить<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            </div>
+          </article>
+
+          <article class="game game--wide" data-lang="" data-deal>
+            <div class="game__media"><img src="assets/img/games/matreshka.webp" alt="Пять матрёшек «Башкирские девчата» в национальных нарядах" width="588" height="403" loading="lazy" decoding="async"></div>
+            <div class="game__body">
+              <h3 class="game__title">Матрёшка «Башкирские девчата»</h3>
+              <p class="game__text">Пять кукол в&nbsp;башкирских нарядах: знакомство с&nbsp;народной игрушкой и&nbsp;элементами орнамента.</p>
+              <div class="game__foot"><span class="price">2&nbsp;700&nbsp;₽</span><a class="buy" href="http://alenmart.ru/glavnaya/product/matreshka-bashkirskie-devchata-5-sht" target="_blank" rel="noopener">Купить<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="games__more">
+          <div class="kits">
+            <h3 class="kits__title">Комплекты для учреждений</h3>
+            <p>Для оснащения по&nbsp;региональному компоненту собираем комплекты: <strong>«Детский сад»&nbsp;— 7&nbsp;000&nbsp;₽</strong>, <strong>«Школа»&nbsp;— 8&nbsp;700&nbsp;₽</strong>. Поставка через ООО «АленМарт», работаем по&nbsp;44-ФЗ и&nbsp;223-ФЗ.</p>
+            <a class="btn btn--green" href="#partners">Запросить комплект</a>
+          </div>
+          <div class="where">
+            <h3 class="where__title">Где ещё продаются игры</h3>
+            <ul>
+              <li>Издательства «Просвещение», «Мозаика-Синтез», «Китап»</li>
+              <li>Сувенирные салоны «Агидель»</li>
+              <li>Магазины Уфы «Эдвис» и&nbsp;«Юные таланты»</li>
+              <li>Интернет-магазины «Семь гномов», «Читай-играй» и&nbsp;маркетплейсы</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Method & proof -->
+    <section class="method section section--green" id="method" aria-labelledby="method-title">
+      <div class="wrap method__grid">
+        <div class="method__doc">
+          <a class="doc" href="assets/img/letters/protokol-ums-2023.webp" data-lightbox data-caption="Выписка из протокола заседания учебно-методического совета при Минобрнауки РБ № 6 от 29.11.2023">
+            <img src="assets/img/letters/protokol-ums-2023.webp" alt="Выписка из протокола заседания учебно-методического совета при Министерстве образования и науки Республики Башкортостан от 29 ноября 2023 года" width="640" height="757" loading="lazy" decoding="async">
+            <span class="doc__zoom"><svg class="icon" aria-hidden="true"><use href="#i-zoom"/></svg>Открыть</span>
+          </a>
+          <img class="method__kunica" src="assets/img/brand/kunica.webp" alt="" width="557" height="640" loading="lazy" decoding="async">
+        </div>
+        <div class="method__text">
+          <h2 id="method-title" class="h2">Не просто игра, а&nbsp;методический инструмент</h2>
+          <blockquote class="decision">
+            <p>«Одобрить настольную дидактическую игру „Юрта знаний“ для изучения государственных языков Республики Башкортостан для образовательных организаций».</p>
+            <footer>Решение учебно-методического совета при Минобрнауки РБ, 29&nbsp;ноября 2023&nbsp;года. 22&nbsp;голоса «за», против и&nbsp;воздержавшихся нет.</footer>
+          </blockquote>
+          <dl class="facts">
+            <div><dt>Наука</dt><dd>Инновационная площадка Института педагогики БГПУ им.&nbsp;М.&nbsp;Акмуллы: игры разрабатывают и&nbsp;проверяют на&nbsp;кафедре дошкольной педагогики и&nbsp;психологии.</dd></div>
+            <div><dt>Консультанты</dt><dd>Национальный музей Республики Башкортостан, Национальная библиотека им.&nbsp;Ахмет-Заки Валиди, педагоги-филологи и&nbsp;художники.</dd></div>
+            <div><dt>Стандарт</dt><dd>Игры соответствуют ФГОС: для дошкольников, младших и&nbsp;средних школьников, в&nbsp;помощь учебному и&nbsp;воспитательному процессу.</dd></div>
+          </dl>
+          <details class="team">
+            <summary>Команда проекта</summary>
+            <ul>
+              <li><strong>Закия Галиахметовна Нафикова</strong>, кандидат педагогических наук, доцент кафедры ДиПО ИРО&nbsp;РБ</li>
+              <li><strong>Ирина Геннадьевна Боронилова</strong>, кандидат педагогических наук, доцент по&nbsp;кафедре педагогических теорий и&nbsp;технологий</li>
+              <li><strong>Гузель Фагимовна Шабаева</strong>, кандидат педагогических наук, доцент</li>
+              <li><strong>Руслан Флюрович Сулейманов</strong>, старший преподаватель кафедры башкирского и&nbsp;других родных языков и&nbsp;литератур ИРО&nbsp;РБ</li>
+              <li><strong>Вера Валерьевна Панина</strong>, старший методист</li>
+              <li><strong>Художники:</strong> Анна Гузий, Лиля Кунафина, Азат Фазлыев, Александр Бухалов</li>
+              <li><strong>Филологи:</strong> Л.&nbsp;Р.&nbsp;Куннакужина, А.&nbsp;Р.&nbsp;Латыпова, М.&nbsp;Г.&nbsp;Азнагулова</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Letters -->
+    <section class="letters section" id="letters" aria-labelledby="letters-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="letters-title" class="h2">Благодарности и&nbsp;награды</h2>
+          <p class="section-head__note">Оригиналы писем&nbsp;— нажмите, чтобы рассмотреть.</p>
+        </div>
+        <ul class="letters__grid">
+          <li class="letter" data-deal>
+            <a href="assets/img/letters/minobrnauki-rb.webp" data-lightbox data-caption="Министерство образования и науки Республики Башкортостан. Благодарственное письмо, 2024">
+              <img src="assets/img/letters/minobrnauki-rb-thumb.webp" alt="Благодарственное письмо Министерства образования и науки Республики Башкортостан Елене Нагимовой" width="520" height="735" loading="lazy" decoding="async">
+            </a>
+            <p class="letter__from">Министерство образования и&nbsp;науки Республики Башкортостан</p>
+            <p class="letter__for">За&nbsp;призы участникам Республиканского конкурса чтецов «История родной земли в&nbsp;стихах»</p>
+            <p class="letter__year">2024</p>
+          </li>
+          <li class="letter" data-deal>
+            <a href="assets/img/letters/ano-bashkirskij-yazyk.webp" data-lightbox data-caption="АНО по сохранению и развитию башкирского языка. Благодарность">
+              <img src="assets/img/letters/ano-bashkirskij-yazyk-thumb.webp" alt="Благодарность АНО по сохранению и развитию башкирского языка Елене Нагимовой" width="520" height="735" loading="lazy" decoding="async">
+            </a>
+            <p class="letter__from">АНО по&nbsp;сохранению и&nbsp;развитию башкирского языка</p>
+            <p class="letter__for">За&nbsp;вклад в&nbsp;сохранение, развитие и&nbsp;популяризацию башкирского языка</p>
+          </li>
+          <li class="letter" data-deal>
+            <a href="assets/img/letters/sibajskij-medkolledzh.webp" data-lightbox data-caption="ГАПОУ РБ «Сибайский медицинский колледж». Благодарность, 2026">
+              <img src="assets/img/letters/sibajskij-medkolledzh-thumb.webp" alt="Благодарность Сибайского медицинского колледжа Елене Нагимовой, директору АНО «Юрта знаний»" width="520" height="735" loading="lazy" decoding="async">
+            </a>
+            <p class="letter__from">Сибайский медицинский колледж</p>
+            <p class="letter__for">За&nbsp;вклад в&nbsp;изучение родного языка, истории, культуры и&nbsp;быта народа</p>
+            <p class="letter__year">2026</p>
+          </li>
+          <li class="letter" data-deal>
+            <a href="assets/img/letters/shkola-2-uzbekistan.webp" data-lightbox data-caption="Общеобразовательная школа № 2, Сурхандарьинская область, Республика Узбекистан. Благодарственное письмо">
+              <img src="assets/img/letters/shkola-2-uzbekistan-thumb.webp" alt="Благодарственное письмо школы № 2 Сурхандарьинской области Узбекистана руководителю АНО «Юрта знаний»" width="520" height="735" loading="lazy" decoding="async">
+            </a>
+            <p class="letter__from">Школа №&nbsp;2, Сурхандарьинская область, Узбекистан</p>
+            <p class="letter__for">За&nbsp;укрепление сотрудничества Узбекистана и&nbsp;Башкортостана в&nbsp;образовании и&nbsp;культуре</p>
+          </li>
+          <li class="letter" data-deal>
+            <a href="assets/img/letters/sertifikat-2015.webp" data-lightbox data-caption="Сертификат участника федерального социального проекта «Благотворительность вместо рекламы», Уфа, 2015">
+              <img src="assets/img/letters/sertifikat-2015-thumb.webp" alt="Сертификат участника федерального социального проекта «Благотворительность вместо рекламы»" width="436" height="604" loading="lazy" decoding="async">
+            </a>
+            <p class="letter__from">Федеральный проект «Благотворительность вместо рекламы»</p>
+            <p class="letter__for">За&nbsp;помощь детским поликлиникам Уфы в&nbsp;проекте «История развития ребёнка»</p>
+            <p class="letter__year">2015</p>
+          </li>
+          <li class="letter" data-deal>
+            <a href="assets/img/letters/diplom-2015.webp" data-lightbox data-caption="Диплом XV специализированной выставки «Образование. Наука. Карьера», Уфа, 2015">
+              <img src="assets/img/letters/diplom-2015-thumb.webp" alt="Диплом выставки «Образование. Наука. Карьера» за активное участие" width="433" height="604" loading="lazy" decoding="async">
+            </a>
+            <p class="letter__from">Выставка «Образование. Наука. Карьера»</p>
+            <p class="letter__for">Диплом за&nbsp;активное участие в&nbsp;образовательном форуме</p>
+            <p class="letter__year">2015</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Author -->
+    <section class="author section" id="author" aria-labelledby="author-title">
+      <div class="wrap author__grid">
+        <figure class="author__photo">
+          <img src="assets/img/photos/elena-nagimova.webp" alt="Елена Владимировна Нагимова" width="495" height="602" loading="lazy" decoding="async">
+        </figure>
+        <div class="author__text">
+          <h2 id="author-title" class="h2">Елена Нагимова, автор проекта</h2>
+          <p class="lead">Больше 25&nbsp;лет я&nbsp;комплектую детские сады, школы и&nbsp;учреждения республики. Когда собирала заявки, увидела, что по&nbsp;региональному компоненту нет ни&nbsp;настольных игр, ни&nbsp;карточек, чтобы дети изучали башкирский язык и&nbsp;культуру родного края в&nbsp;игре.</p>
+          <p>В&nbsp;2022 году мы&nbsp;собрали команду: консультанты Национального музея и&nbsp;Национальной библиотеки, педагоги-филологи и&nbsp;художники. Так появилась «Юрта знаний».</p>
+          <ul class="awards">
+            <li>Победитель республиканского конкурса «Женщина&nbsp;— директор года» в&nbsp;номинации «Меценат года», 2019</li>
+            <li>Победитель регионального этапа Национальной премии «Бизнес-Успех», 2024</li>
+            <li>Партнёр акции «Тотальный диктант», проекта Национальной библиотеки «Борон-борон заманда» и&nbsp;конкурса «Лидер дошкольного образования Республики Башкортостан»</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="wrap world">
+        <div class="world__head">
+          <h3 class="world__title">Проект выходит за&nbsp;пределы Башкортостана</h3>
+          <p>«Юрта знаний» участвует в&nbsp;международных форумах в&nbsp;Казахстане, Беларуси и&nbsp;Узбекистане в&nbsp;составе бизнес-миссий Министерства внешнеэкономических связей Республики Башкортостан.</p>
+        </div>
+        <ul class="world__photos">
+          <li data-deal><img src="assets/img/photos/forum-oila.webp" alt="Елена Нагимова с карточками «Семья» на узбекском языке на стенде Республики Башкортостан" width="720" height="405" loading="lazy" decoding="async"><span>Карточки «Семья» на&nbsp;узбекском: <i lang="uz">Oila</i></span></li>
+          <li data-deal><img src="assets/img/photos/forum-kazahstan.webp" alt="Елена Нагимова на форуме Башкортостан — Казахстан" width="720" height="488" loading="lazy" decoding="async"><span>Форум Башкортостан&nbsp;— Казахстан</span></li>
+          <li data-deal><img src="assets/img/photos/forum-tribuna.webp" alt="Выступление с презентацией «Юрты знаний»" width="573" height="559" loading="lazy" decoding="async"><span>Презентация проекта</span></li>
+          <li data-deal><img src="assets/img/photos/igra-s-podrostkami.webp" alt="Подростки играют в настольную игру вместе с Еленой Нагимовой" width="720" height="540" loading="lazy" decoding="async"><span>Играем вместе</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Partners & contacts -->
+    <section class="partners section section--green" id="partners" aria-labelledby="partners-title">
+      <div class="wrap partners__grid">
+        <div class="partners__text">
+          <h2 id="partners-title" class="h2 partners__title">Отдельный регион. Отдельный народ. Отдельная культура.</h2>
+          <p class="partners__value">И&nbsp;одна общая ценность&nbsp;— уважение друг к&nbsp;другу.</p>
+          <p class="lead">Мы хотим собрать коллекцию игр о&nbsp;каждом регионе и&nbsp;народе России. Открыты к&nbsp;сотрудничеству с&nbsp;образовательными учреждениями, регионами, культурными и&nbsp;социальными проектами, компаниями и&nbsp;организациями.</p>
+          <ul class="offer">
+            <li><strong>Новые игры</strong> о&nbsp;вашем крае: символы, природа, праздники, литература и&nbsp;орнамент.</li>
+            <li><strong>Ваш язык</strong> в&nbsp;готовых играх: адаптируем методику и&nbsp;карточки, как уже сделали для татарского и&nbsp;английского.</li>
+            <li><strong>Оснащение</strong> детских садов и&nbsp;школ комплектами, а&nbsp;подготовку педагогов сопровождает БГПУ им.&nbsp;М.&nbsp;Акмуллы.</li>
+          </ul>
+        </div>
+
+        <div class="contact" id="contact">
+          <p class="contact__word">Ваш язык?</p>
+          <p class="contact__lead">Напишите Елене Владимировне&nbsp;— обсудим, какой может быть «Юрта знаний» в&nbsp;вашем регионе.</p>
+          <a class="btn btn--ink btn--block" href="https://wa.me/79177521702?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%95%D0%BB%D0%B5%D0%BD%D0%B0!%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20%C2%AB%D0%AE%D1%80%D1%82%D0%B0%20%D0%B7%D0%BD%D0%B0%D0%BD%D0%B8%D0%B9%C2%BB." target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>Написать в&nbsp;WhatsApp</a>
+          <ul class="contact__list">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+79177521702">+7&nbsp;917&nbsp;752-17-02</a></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:elena0721@mail.ru?subject=%D0%AE%D1%80%D1%82%D0%B0%20%D0%B7%D0%BD%D0%B0%D0%BD%D0%B8%D0%B9%3A%20%D1%81%D0%BE%D1%82%D1%80%D1%83%D0%B4%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE">elena0721@mail.ru</a></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><a href="https://yandex.ru/maps/?text=%D0%A3%D1%84%D0%B0%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%2050%20%D0%BB%D0%B5%D1%82%20%D0%A1%D0%A1%D0%A1%D0%A0%2C%203" target="_blank" rel="noopener">Уфа, ул.&nbsp;50&nbsp;лет СССР, д.&nbsp;3, офис&nbsp;1</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__grid">
+      <p class="site-footer__brand"><img src="favicon.svg" alt="" width="32" height="32">«Юрта знаний»&nbsp;— образовательный проект Елены Нагимовой</p>
+      <p>Игры производит ООО «АленМарт». Интернет-магазин: <a href="http://alenmart.ru/" target="_blank" rel="noopener">alenmart.ru</a></p>
+      <p>© 2026 <span lang="ba">Белем тирмәһе</span></p>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" aria-label="Просмотр документа">
+    <figure class="lightbox__figure">
+      <figcaption class="lightbox__cap"></figcaption>
+    </figure>
+    <button class="lightbox__btn lightbox__close" type="button" aria-label="Закрыть"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+    <button class="lightbox__btn lightbox__prev" type="button" aria-label="Предыдущий документ"><svg class="icon" aria-hidden="true"><use href="#i-prev"/></svg></button>
+    <button class="lightbox__btn lightbox__next" type="button" aria-label="Следующий документ"><svg class="icon" aria-hidden="true"><use href="#i-next"/></svg></button>
+  </dialog>
+</body>
+</html>
