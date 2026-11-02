@@ -1,7 +1,15 @@
-// «Юрта знаний»: карточка языков, фильтр каталога, просмотр писем, активный раздел в меню.
+// «Юрта знаний»: карточка языков, фильтр каталога, карусели, команда, просмотр документов, активный раздел в меню.
 (() => {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const easeOut = "cubic-bezier(.16, 1, .3, 1)";
+
+  // Turns a card over; `swap` runs while the card is edge-on.
+  const flip = async (card, swap) => {
+    if (reduceMotion.matches || !card.animate) { swap(); return; }
+    await card.animate([{ transform: "rotateY(0deg)" }, { transform: "rotateY(90deg)" }], { duration: 160, easing: "cubic-bezier(.55, 0, .8, .2)" }).finished;
+    swap();
+    await card.animate([{ transform: "rotateY(-90deg)" }, { transform: "rotateY(0deg)" }], { duration: 460, easing: easeOut }).finished;
+  };
 
   /* ---------- Hero card: one word, many languages ---------- */
   const langcard = document.querySelector("[data-langcard]");
@@ -35,12 +43,9 @@
       index = i;
       tabs.forEach((t, k) => { t.setAttribute("aria-selected", String(k === i)); t.tabIndex = k === i ? 0 : -1; });
       if (focus) tabs[i].focus();
-      if (reduceMotion.matches || !panel.animate) { render(tabs[i]); return; }
       busy = true;
       try {
-        await panel.animate([{ transform: "rotateY(0deg)" }, { transform: "rotateY(90deg)" }], { duration: 160, easing: "cubic-bezier(.55, 0, .8, .2)" }).finished;
-        render(tabs[i]);
-        await panel.animate([{ transform: "rotateY(-90deg)" }, { transform: "rotateY(0deg)" }], { duration: 460, easing: easeOut }).finished;
+        await flip(panel, () => render(tabs[i]));
       } finally {
         busy = false;
         if (pending !== null) { const p = pending; pending = null; select(p); }
@@ -97,31 +102,109 @@
     });
   }
 
-  /* ---------- Letters: full-size viewer ---------- */
+  /* ---------- Carousels ---------- */
+  document.querySelectorAll("[data-carousel]").forEach((carousel) => {
+    const track = carousel.querySelector(".carousel__track");
+    const prev = carousel.querySelector("[data-prev]");
+    const next = carousel.querySelector("[data-next]");
+    const update = () => {
+      const end = track.scrollWidth - track.clientWidth;
+      prev.disabled = track.scrollLeft <= 4;
+      next.disabled = track.scrollLeft >= end - 4;
+      carousel.classList.toggle("is-static", end <= 4);
+    };
+    const move = (direction) => {
+      const [first, second] = track.children;
+      const step = second ? second.offsetLeft - first.offsetLeft : track.clientWidth;
+      track.scrollBy({ left: direction * step, behavior: reduceMotion.matches ? "auto" : "smooth" });
+    };
+    prev.addEventListener("click", () => move(-1));
+    next.addEventListener("click", () => move(1));
+    track.addEventListener("scroll", update, { passive: true });
+    new ResizeObserver(update).observe(track);
+  });
+
+  /* ---------- Team: the author card turns to the chosen person ---------- */
+  const team = document.querySelector("[data-team]");
+  const people = [...document.querySelectorAll(".person")];
+  if (team && people.length) {
+    const photo = team.querySelector("[data-team-photo]");
+    const img = photo.querySelector("img");
+    const mono = photo.querySelector("[data-team-mono]");
+    const text = team.querySelector(".author__text");
+    const name = team.querySelector("[data-team-name]");
+    const role = team.querySelector("[data-team-role]");
+    const bio = team.querySelector("[data-team-bio]");
+    const story = team.querySelector("[data-team-story]");
+    let busy = false;
+
+    // A photo goes live once its path is written in data-photo; until then the card shows initials.
+    people.forEach((person) => {
+      const slot = person.querySelector(".person__photo");
+      if (!person.dataset.photo || slot.querySelector("img")) return;
+      slot.replaceChildren(Object.assign(new Image(), { src: person.dataset.photo, alt: "", loading: "lazy", decoding: "async" }));
+    });
+
+    const render = (person) => {
+      const src = person.dataset.photo;
+      const fullName = person.querySelector(".person__name").textContent;
+      const isAuthor = person.hasAttribute("data-author");
+      img.hidden = !src;
+      if (src) { img.src = src; img.alt = fullName; }
+      mono.hidden = Boolean(src);
+      mono.textContent = person.querySelector(".person__mono")?.textContent || "";
+      name.textContent = person.dataset.title || fullName;
+      role.hidden = isAuthor;
+      role.textContent = person.querySelector(".person__role").textContent;
+      bio.hidden = !person.dataset.bio;
+      bio.textContent = person.dataset.bio || "";
+      story.hidden = !isAuthor;
+    };
+
+    people.forEach((person) => person.addEventListener("click", async () => {
+      if (busy || person.classList.contains("is-active")) return;
+      people.forEach((p) => {
+        p.classList.toggle("is-active", p === person);
+        p.setAttribute("aria-pressed", String(p === person));
+      });
+      // Side by side, keep the strip below still when short text replaces the long author story.
+      if (window.matchMedia("(min-width: 901px)").matches && !text.style.minHeight) text.style.minHeight = `${text.offsetHeight}px`;
+      busy = true;
+      await flip(photo, () => render(person));
+      busy = false;
+    }));
+  }
+
+  /* ---------- Documents: full-size viewer, paged within one carousel ---------- */
   const dialog = document.querySelector(".lightbox");
   const docs = [...document.querySelectorAll("[data-lightbox]")];
   if (dialog && typeof dialog.showModal === "function" && docs.length) {
     const cap = dialog.querySelector(".lightbox__cap");
+    const prev = dialog.querySelector(".lightbox__prev");
+    const next = dialog.querySelector(".lightbox__next");
     const img = document.createElement("img"); // created here so the page never ships an <img> without a source
     img.className = "lightbox__img";
     cap.before(img);
-    let current = 0;
+    let group = [], current = 0;
     const show = (i) => {
-      current = (i + docs.length) % docs.length;
-      const a = docs[current];
+      current = (i + group.length) % group.length;
+      const a = group[current];
       img.removeAttribute("src");
       img.src = a.getAttribute("href");
       img.alt = a.querySelector("img")?.alt || "";
       cap.textContent = a.dataset.caption || "";
     };
-    docs.forEach((a, i) => a.addEventListener("click", (e) => {
+    docs.forEach((a) => a.addEventListener("click", (e) => {
       e.preventDefault();
-      show(i);
+      const carousel = a.closest("[data-carousel]");
+      group = carousel ? [...carousel.querySelectorAll("[data-lightbox]")] : [a];
+      prev.hidden = next.hidden = group.length < 2;
+      show(group.indexOf(a));
       dialog.showModal();
     }));
     dialog.querySelector(".lightbox__close").addEventListener("click", () => dialog.close());
-    dialog.querySelector(".lightbox__prev").addEventListener("click", () => show(current - 1));
-    dialog.querySelector(".lightbox__next").addEventListener("click", () => show(current + 1));
+    prev.addEventListener("click", () => show(current - 1));
+    next.addEventListener("click", () => show(current + 1));
     dialog.addEventListener("keydown", (e) => {
       if (e.key === "ArrowLeft") show(current - 1);
       if (e.key === "ArrowRight") show(current + 1);

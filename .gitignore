@@ -10,3 +10,7 @@ Thumbs.db
 desktop.ini
 .DS_Store
 .impeccable/questions/
+
+# заявки на гранты — не для публикации
+/25-1-011171.pdf
+/26-2-010638.pdf

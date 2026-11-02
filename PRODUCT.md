@@ -45,7 +45,8 @@ Games are developed by ООО «АленМарт» with Akmulla Bashkir State Pe
 - Mascot: the marten (куница, symbol of Ufa) in a green vest and a blue mortarboard, from «Уфа 450 лет» and the booklet.
 - Motto «Играя — изучай свой край!».
 - Packaging language: white boxes, green leafy ornamental frame, red titles.
-- User request: borrow shades from alenmart.ru (yellow #FFBB10, red #EB3C3C, green #00AF53), but the result must be far more modern and clearer than that site.
+- User request: borrow shades from alenmart.ru (red #EB3C3C, green #00AF53), but the result must be far more modern and clearer than that site.
+- Client edits of 02.11.2026 (binding): no orange in panels or site styling, use ivory with a light beige tone (illustrations such as the marten stay as drawn); green a little lighter and more pastel but still the brand green, not pale; the wordmark in capitals in one font; the heading "Елена Нагимова, автор проекта" in green; the client's own logo top left.
 
 ## Evidence on Hand
 
@@ -53,7 +54,8 @@ Games are developed by ООО «АленМарт» with Akmulla Bashkir State Pe
 - Awards from alenmart.ru: certificate of the federal social project «Благотворительность вместо рекламы» (Ufa, 2015); diploma of the XV exhibition «Образование. Наука. Карьера» (Ufa, 2015).
 - Extract from the Ministry council protocol of 29.11.2023 (booklet, p. 6).
 - Achievements: winner of the republican contest «Женщина — директор года», nomination «Меценат года» (2019); winner of the regional stage of the National Prize «Бизнес-Успех» (2024); partner of «Тотальный диктант», the National Library project «Борон-борон заманда», the contest «Лидер дошкольного образования РБ».
-- Team list (booklet, p. 5), Elena's speech and thesis (`Источники/*.docx`).
+- Team list (booklet, p. 5), Elena's speech and thesis (`Источники/*.docx`). Zakiya Galiakhmetovna Nafikova is the author of books and workbooks for learning Bashkir in primary school (Elena, meeting of 02.11.2026); her title stays as listed in the booklet.
+- Pending from Elena (meeting of 02.11.2026): the selected gratitude letters, all state certificates and methodologies, a better portrait, more team surnames, photos of the whole team, the philologists' corrections, any missing games. The domain is to be settled at a meeting.
 - Photos: Elena's portrait, forum and workshop photos, the game line-up (booklet); box art for every game (presentation).
 - Absent: customer reviews (the alenmart.ru reviews page is spam), sales figures, partner logos. Do not invent any of these.
 

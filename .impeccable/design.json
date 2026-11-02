@@ -1,52 +1,52 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-27T14:37:15.238Z",
+  "generatedAt": "2026-11-02T19:00:16.027Z",
   "title": "Design System: Юрта знаний",
   "extensions": {
     "colorMeta": {
       "box-green": {
         "role": "primary",
         "displayName": "Box-Frame Green",
-        "canonical": "oklch(51.0% 0.127 153.0)",
+        "canonical": "oklch(53.2% 0.108 158.9)",
         "tonalRamp": [
-          "#001004",
-          "#012E14",
-          "#015028",
-          "#01753C",
-          "#39985D",
-          "#5FBC7E",
-          "#84E1A2",
-          "#C6FFD5"
+          "#000F06",
+          "#012E1A",
+          "#034F31",
+          "#12734A",
+          "#3F966A",
+          "#64BA8C",
+          "#89DFB0",
+          "#C4FFDC"
         ]
       },
       "box-green-deep": {
         "role": "primary",
         "displayName": "Deep Box Green",
-        "canonical": "oklch(42.5% 0.104 153.5)",
+        "canonical": "oklch(45.8% 0.093 158.8)",
         "tonalRamp": [
-          "#001004",
-          "#002E14",
-          "#015028",
-          "#277244",
-          "#4B9465",
-          "#6FB886",
-          "#93DDAA",
-          "#C6FFD6"
+          "#000F06",
+          "#002E1A",
+          "#004F30",
+          "#27714D",
+          "#4C936E",
+          "#6FB790",
+          "#93DCB3",
+          "#C4FFDC"
         ]
       },
       "night-green": {
         "role": "neutral",
         "displayName": "Night Green",
-        "canonical": "oklch(32.5% 0.076 154.7)",
+        "canonical": "oklch(36.5% 0.075 159.5)",
         "tonalRamp": [
-          "#001005",
-          "#002E16",
-          "#1A4E30",
-          "#3B6E4E",
-          "#5D906E",
-          "#7FB390",
-          "#A2D8B4",
-          "#C7FED8"
+          "#000F06",
+          "#002E1A",
+          "#144E34",
+          "#376E52",
+          "#599073",
+          "#7CB495",
+          "#9FD9B8",
+          "#C4FFDD"
         ]
       },
       "mint-wash": {
@@ -79,34 +79,34 @@
           "#FEE9E6"
         ]
       },
-      "alenmart-yellow": {
+      "ivory": {
         "role": "tertiary",
-        "displayName": "Alenmart Yellow",
-        "canonical": "oklch(83.3% 0.170 81.7)",
+        "displayName": "Warm Ivory",
+        "canonical": "oklch(94.5% 0.023 84.6)",
         "tonalRamp": [
-          "#120900",
-          "#322201",
-          "#563D01",
-          "#7E5A00",
-          "#A77907",
-          "#D39A07",
-          "#FFBC22",
-          "#FFECCB"
+          "#100A02",
+          "#2A2418",
+          "#484134",
+          "#676053",
+          "#898273",
+          "#ACA495",
+          "#D0C8B9",
+          "#F6EEDE"
         ]
       },
-      "yellow-wash": {
+      "ivory-deep": {
         "role": "tertiary",
-        "displayName": "Yellow Wash",
-        "canonical": "oklch(93.2% 0.090 90.9)",
+        "displayName": "Ivory Shadow",
+        "canonical": "oklch(89.4% 0.036 85.4)",
         "tonalRamp": [
-          "#100A00",
-          "#2F2400",
-          "#514003",
-          "#745F19",
-          "#96803E",
-          "#BAA361",
-          "#DFC784",
-          "#FFEEBD"
+          "#110A00",
+          "#2D240F",
+          "#4B412C",
+          "#6A604A",
+          "#8C816A",
+          "#AFA48C",
+          "#D4C8AF",
+          "#F9EDD4"
         ]
       },
       "ink": {
@@ -187,16 +187,16 @@
       "on-green-soft": {
         "role": "neutral",
         "displayName": "Green Mist",
-        "canonical": "oklch(95.4% 0.019 157.9)",
+        "canonical": "oklch(96.8% 0.012 157.0)",
         "tonalRamp": [
-          "#050E08",
-          "#1D2821",
-          "#3A453E",
-          "#59655D",
-          "#79867E",
-          "#9CA9A0",
-          "#C0CDC4",
-          "#E5F3EA"
+          "#070D09",
+          "#202723",
+          "#3D443F",
+          "#5C635E",
+          "#7D857F",
+          "#9FA7A2",
+          "#C3CCC6",
+          "#E8F1EB"
         ]
       }
     },
@@ -281,15 +281,15 @@
       "refersTo": "button-primary",
       "description": "The next action: «Стать партнёром», «Написать Елене».",
       "html": "<a class=\"ds-btn-primary\" href=\"#\">Стать партнёром</a>",
-      "css": ".ds-btn-primary{display:inline-flex;align-items:center;min-height:52px;padding:.8rem 1.5rem;border-radius:999px;background:var(--yellow,#FFBB10);color:var(--ink,#16201A);font:700 1rem/1.1 'Golos Text',system-ui,sans-serif;text-decoration:none;box-shadow:0 10px 24px -12px rgba(0,0,0,.45);transition:transform .25s cubic-bezier(.16,1,.3,1),background-color .2s}.ds-btn-primary:hover{background:#FFC83A;transform:translateY(-2px)}.ds-btn-primary:focus-visible{outline:3px solid var(--ink,#16201A);outline-offset:3px}"
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;min-height:52px;padding:.8rem 1.5rem;border-radius:999px;background:var(--yellow,#F4ECDC);color:var(--ink,#16201A);font:700 1rem/1.1 'Golos Text',system-ui,sans-serif;text-decoration:none;box-shadow:0 10px 24px -12px rgba(0,0,0,.45);transition:transform .25s cubic-bezier(.16,1,.3,1),background-color .2s}.ds-btn-primary:hover{background:#FBF6EA;transform:translateY(-2px)}.ds-btn-primary:focus-visible{outline:3px solid var(--ink,#16201A);outline-offset:3px}"
     },
     {
       "name": "Ghost Button on green",
       "kind": "button",
       "refersTo": "button-ghost",
       "description": "Secondary action on a green field.",
-      "html": "<div style=\"background:#0E7A41;padding:24px\"><a class=\"ds-btn-ghost\" href=\"#\">Смотреть 18 игр</a></div>",
-      "css": ".ds-btn-ghost{display:inline-flex;align-items:center;min-height:52px;padding:.8rem 1.5rem;border-radius:999px;color:#fff;font:700 1rem/1.1 'Golos Text',system-ui,sans-serif;text-decoration:none;box-shadow:inset 0 0 0 2px rgba(255,255,255,.55);transition:box-shadow .2s,background-color .2s}.ds-btn-ghost:hover{box-shadow:inset 0 0 0 2px #fff;background:rgba(255,255,255,.08)}.ds-btn-ghost:focus-visible{outline:3px solid #FFBB10;outline-offset:3px}"
+      "html": "<div style=\"background:#247F55;padding:24px\"><a class=\"ds-btn-ghost\" href=\"#\">Смотреть 18 игр</a></div>",
+      "css": ".ds-btn-ghost{display:inline-flex;align-items:center;min-height:52px;padding:.8rem 1.5rem;border-radius:999px;color:#fff;font:700 1rem/1.1 'Golos Text',system-ui,sans-serif;text-decoration:none;box-shadow:inset 0 0 0 2px rgba(255,255,255,.55);transition:box-shadow .2s,background-color .2s}.ds-btn-ghost:hover{box-shadow:inset 0 0 0 2px #fff;background:rgba(255,255,255,.08)}.ds-btn-ghost:focus-visible{outline:3px solid #F4ECDC;outline-offset:3px}"
     },
     {
       "name": "Index Tabs",
@@ -297,7 +297,7 @@
       "refersTo": "tab-index",
       "description": "Filter or section tabs with rounded top corners on a green baseline.",
       "html": "<div class=\"ds-tabs\"><button class=\"ds-tab is-active\">Все <span>18</span></button><button class=\"ds-tab\">Башкирский <span>10</span></button><button class=\"ds-tab\">Татарский <span>2</span></button></div>",
-      "css": ".ds-tabs{display:flex;gap:4px;border-bottom:3px solid #0E7A41}.ds-tab{appearance:none;border:0;cursor:pointer;min-height:46px;padding:.45rem 1.1rem .5rem;border-radius:12px 12px 0 0;background:#E4F1E8;color:#0A5E32;font:700 .875rem/1 'Golos Text',system-ui,sans-serif;letter-spacing:.02em}.ds-tab span{opacity:.7;font-variant-numeric:tabular-nums}.ds-tab:hover{background:#D3E9DB}.ds-tab.is-active{background:#0E7A41;color:#fff}.ds-tab:focus-visible{outline:3px solid #FFBB10;outline-offset:3px}"
+      "css": ".ds-tabs{display:flex;gap:4px;border-bottom:3px solid #247F55}.ds-tab{appearance:none;border:0;cursor:pointer;min-height:46px;padding:.45rem 1.1rem .5rem;border-radius:12px 12px 0 0;background:#E4F1E8;color:#1B6744;font:700 .875rem/1 'Golos Text',system-ui,sans-serif;letter-spacing:.02em}.ds-tab span{opacity:.7;font-variant-numeric:tabular-nums}.ds-tab:hover{background:#D3E9DB}.ds-tab.is-active{background:#247F55;color:#fff}.ds-tab:focus-visible{outline:3px solid #F4ECDC;outline-offset:3px}"
     },
     {
       "name": "Language Chips",
@@ -305,7 +305,7 @@
       "refersTo": "chip-language",
       "description": "Languages a product actually supports, as tiny index tabs.",
       "html": "<ul class=\"ds-langs\"><li>Рус</li><li>Баш</li><li>Eng</li></ul>",
-      "css": ".ds-langs{display:flex;gap:4px;list-style:none;margin:0;padding:0}.ds-langs li{padding:.2rem .5rem .25rem;border-radius:7px 7px 0 0;font:700 .75rem/1.2 'Golos Text',system-ui,sans-serif;letter-spacing:.03em;background:#E4F1E8;color:#0A5E32;box-shadow:inset 0 -2px 0 #0E7A41}"
+      "css": ".ds-langs{display:flex;gap:4px;list-style:none;margin:0;padding:0}.ds-langs li{padding:.2rem .5rem .25rem;border-radius:7px 7px 0 0;font:700 .75rem/1.2 'Golos Text',system-ui,sans-serif;letter-spacing:.03em;background:#E4F1E8;color:#1B6744;box-shadow:inset 0 -2px 0 #247F55}"
     },
     {
       "name": "Product Card",
@@ -313,7 +313,7 @@
       "refersTo": "card-product",
       "description": "Catalogue item: box shot, title, languages, short text, price and buy link.",
       "html": "<article class=\"ds-card\"><div class=\"ds-card__media\"></div><h3>«Я говорю на башкирском языке!»</h3><p>18 вариантов игры: от первых слов до предложений по схемам.</p><div class=\"ds-card__foot\"><b>850 ₽</b><a href=\"#\">Купить ↗</a></div></article>",
-      "css": ".ds-card{position:relative;max-width:300px;display:flex;flex-direction:column;background:#fff;border-radius:22px;box-shadow:0 0 0 1px #D3DED6;padding-bottom:1.2rem;transition:box-shadow .3s cubic-bezier(.16,1,.3,1),transform .35s cubic-bezier(.16,1,.3,1)}.ds-card::before{content:'';position:absolute;inset:7px;border:1px solid rgba(14,122,65,.16);border-radius:16px;pointer-events:none}.ds-card:hover{transform:translateY(-3px);box-shadow:0 0 0 1px rgba(14,122,65,.45),0 1px 2px rgba(7,63,34,.08),0 18px 40px -18px rgba(7,63,34,.35)}.ds-card__media{aspect-ratio:4/3;margin:16px;border-radius:10px;background:#F3F6F1}.ds-card h3{margin:0 1.25rem;font:700 1.1875rem/1.2 Podkova,Georgia,serif;color:#16201A}.ds-card p{margin:.65rem 1.25rem 0;font:400 .9375rem/1.5 'Golos Text',system-ui,sans-serif;color:#3D4A41}.ds-card__foot{display:flex;justify-content:space-between;align-items:center;margin:1rem 1.25rem 0}.ds-card__foot b{font:800 1.375rem/1 Podkova,Georgia,serif;font-variant-numeric:tabular-nums}.ds-card__foot a{padding:.45rem .9rem;border-radius:999px;color:#0A5E32;font:700 .9375rem 'Golos Text',system-ui,sans-serif;text-decoration:none;box-shadow:inset 0 0 0 1.5px #0E7A41}.ds-card__foot a:hover{background:#0E7A41;color:#fff}"
+      "css": ".ds-card{position:relative;max-width:300px;display:flex;flex-direction:column;background:#fff;border-radius:22px;box-shadow:0 0 0 1px #D3DED6;padding-bottom:1.2rem;transition:box-shadow .3s cubic-bezier(.16,1,.3,1),transform .35s cubic-bezier(.16,1,.3,1)}.ds-card::before{content:'';position:absolute;inset:7px;border:1px solid rgba(36,127,85,.16);border-radius:16px;pointer-events:none}.ds-card:hover{transform:translateY(-3px);box-shadow:0 0 0 1px rgba(36,127,85,.45),0 1px 2px rgba(7,63,34,.08),0 18px 40px -18px rgba(7,63,34,.35)}.ds-card__media{aspect-ratio:4/3;margin:16px;border-radius:10px;background:#F3F6F1}.ds-card h3{margin:0 1.25rem;font:700 1.1875rem/1.2 Podkova,Georgia,serif;color:#16201A}.ds-card p{margin:.65rem 1.25rem 0;font:400 .9375rem/1.5 'Golos Text',system-ui,sans-serif;color:#3D4A41}.ds-card__foot{display:flex;justify-content:space-between;align-items:center;margin:1rem 1.25rem 0}.ds-card__foot b{font:800 1.375rem/1 Podkova,Georgia,serif;font-variant-numeric:tabular-nums}.ds-card__foot a{padding:.45rem .9rem;border-radius:999px;color:#1B6744;font:700 .9375rem 'Golos Text',system-ui,sans-serif;text-decoration:none;box-shadow:inset 0 0 0 1.5px #247F55}.ds-card__foot a:hover{background:#247F55;color:#fff}"
     },
     {
       "name": "Language Card",
@@ -321,31 +321,31 @@
       "refersTo": "card-word",
       "description": "Signature: the didactic card with language tabs; one word, many languages.",
       "html": "<div class=\"ds-lc\"><div class=\"ds-lc__tabs\"><span class=\"on\">Рус</span><span>Баш</span><span>Тат</span><span>Eng</span><span class=\"plus\">+</span></div><div class=\"ds-lc__card\"><p class=\"ds-lc__word\">ҒАИЛӘ</p><p class=\"ds-lc__name\">башҡорт теле <em>в продаже</em></p></div></div>",
-      "css": ".ds-lc{position:relative;width:340px;padding-top:40px;transform:rotate(-2.5deg)}.ds-lc__tabs{position:absolute;top:0;left:14px;display:flex;gap:4px}.ds-lc__tabs span{padding:.6rem .7rem;border-radius:12px 12px 0 0;background:rgba(14,122,65,.75);color:#fff;font:700 .8125rem/1 'Golos Text',system-ui,sans-serif}.ds-lc__tabs span.on{background:#fff;color:#0E7A41}.ds-lc__tabs span.plus{background:#FFBB10;color:#16201A}.ds-lc__card{position:relative;min-height:260px;padding:1.8rem;border-radius:4px 22px 22px 22px;background:#fff;box-shadow:0 2px 4px rgba(7,63,34,.10),0 28px 48px -20px rgba(7,63,34,.45)}.ds-lc__card::before{content:'';position:absolute;inset:12px;border:1.5px solid rgba(14,122,65,.35);border-radius:14px}.ds-lc__word{margin:0;font:800 4rem/.95 Podkova,Georgia,serif;letter-spacing:-.02em;color:#D0201A}.ds-lc__name{margin:.9rem 0 0;font:600 1rem 'Golos Text',system-ui,sans-serif;color:#3D4A41}.ds-lc__name em{font-style:normal;margin-left:.5rem;padding:.2rem .6rem;border-radius:999px;font-size:.75rem;background:#E4F1E8;color:#0A5E32}"
+      "css": ".ds-lc{position:relative;width:340px;padding-top:40px;transform:rotate(-2.5deg)}.ds-lc__tabs{position:absolute;top:0;left:14px;display:flex;gap:4px}.ds-lc__tabs span{padding:.6rem .7rem;border-radius:12px 12px 0 0;background:rgba(36,127,85,.75);color:#fff;font:700 .8125rem/1 'Golos Text',system-ui,sans-serif}.ds-lc__tabs span.on{background:#fff;color:#247F55}.ds-lc__tabs span.plus{background:#F4ECDC;color:#16201A}.ds-lc__card{position:relative;min-height:260px;padding:1.8rem;border-radius:4px 22px 22px 22px;background:#fff;box-shadow:0 2px 4px rgba(7,63,34,.10),0 28px 48px -20px rgba(7,63,34,.45)}.ds-lc__card::before{content:'';position:absolute;inset:12px;border:1.5px solid rgba(36,127,85,.35);border-radius:14px}.ds-lc__word{margin:0;font:800 4rem/.95 Podkova,Georgia,serif;letter-spacing:-.02em;color:#D0201A}.ds-lc__name{margin:.9rem 0 0;font:600 1rem 'Golos Text',system-ui,sans-serif;color:#3D4A41}.ds-lc__name em{font-style:normal;margin-left:.5rem;padding:.2rem .6rem;border-radius:999px;font-size:.75rem;background:#E4F1E8;color:#1B6744}"
     },
     {
       "name": "Contact Card",
       "kind": "card",
       "refersTo": "card-contact",
-      "description": "The yellow «Ваш язык?» card closing the page: one ink action plus contacts.",
+      "description": "The ivory «Ваш язык?» card closing the page: one ink action plus contacts.",
       "html": "<div class=\"ds-contact\"><p class=\"ds-contact__word\">Ваш язык?</p><p>Напишите Елене Владимировне — обсудим «Юрту знаний» в вашем регионе.</p><a href=\"#\">Написать в WhatsApp</a></div>",
-      "css": ".ds-contact{position:relative;max-width:360px;padding:2rem;border-radius:22px;background:#FFBB10;color:#16201A;transform:rotate(1.5deg);box-shadow:0 2px 4px rgba(7,63,34,.10),0 28px 48px -20px rgba(7,63,34,.45);font:400 1rem/1.5 'Golos Text',system-ui,sans-serif}.ds-contact::before{content:'';position:absolute;inset:12px;border:2px dashed rgba(22,32,26,.35);border-radius:14px;pointer-events:none}.ds-contact>*{position:relative}.ds-contact__word{margin:0 0 .8rem;font:800 2.6rem/.95 Podkova,Georgia,serif;letter-spacing:-.02em}.ds-contact a{display:flex;justify-content:center;margin-top:1.2rem;min-height:52px;align-items:center;border-radius:999px;background:#16201A;color:#fff;font-weight:700;text-decoration:none}.ds-contact a:hover{background:#24332A}.ds-contact a:focus-visible{outline:3px solid #16201A;outline-offset:3px}"
+      "css": ".ds-contact{position:relative;max-width:360px;padding:2rem;border-radius:22px;background:#F4ECDC;color:#16201A;transform:rotate(1.5deg);box-shadow:0 2px 4px rgba(7,63,34,.10),0 28px 48px -20px rgba(7,63,34,.45);font:400 1rem/1.5 'Golos Text',system-ui,sans-serif}.ds-contact::before{content:'';position:absolute;inset:12px;border:2px dashed rgba(22,32,26,.35);border-radius:14px;pointer-events:none}.ds-contact>*{position:relative}.ds-contact__word{margin:0 0 .8rem;font:800 2.6rem/.95 Podkova,Georgia,serif;letter-spacing:-.02em}.ds-contact a{display:flex;justify-content:center;margin-top:1.2rem;min-height:52px;align-items:center;border-radius:999px;background:#16201A;color:#fff;font-weight:700;text-decoration:none}.ds-contact a:hover{background:#24332A}.ds-contact a:focus-visible{outline:3px solid #16201A;outline-offset:3px}"
     }
   ],
   "narrative": {
     "northStar": "Одно слово — семь языков",
-    "overview": "The whole system is the didactic card from the «Семья» set: a sheet of white card stock with a thin printed frame, one word set large in a primer slab, and index tabs along its top edge that switch the language. Every surface borrows that object. Content lives on white cards laid on a deep green field — the green of the game boxes' leafy frame — and the only tabs on the page are language or section tabs, never decoration.\n\nThe palette is a full four-role set taken from the client's own packaging and shop: box-frame green owns whole regions (hero, method, partners), box-title red sets display words on light grounds, alenmart yellow is reserved for the one thing a visitor should do next and for the \"+ ваш язык\" slot. Density is moderate: generous section spacing, compact card internals. Motion is one idea — cards are dealt into place and the language card turns — and nothing else moves.\n\nThe world rejects the default kids'-product landing: no icon-benefit grids, no cartoon confetti, no testimonial slider, no cream paper. Bashkir letters (Ә Ө Ү Ғ Ҡ Ң Ҙ Ҫ Һ) are the only ornament-scale type.",
+    "overview": "The whole system is the didactic card from the «Семья» set: a sheet of white card stock with a thin printed frame, one word set large in a primer slab, and index tabs along its top edge that switch the language. Every surface borrows that object. Content lives on white cards laid on a deep green field — the green of the game boxes' leafy frame — and the only tabs on the page are language or section tabs, never decoration.\n\nThe palette is a full four-role set taken from the client's own packaging and shop: box-frame green owns whole regions (hero, method, partners), box-title red sets display words on light grounds, warm ivory is reserved for the one thing a visitor should do next and for the \"+ ваш язык\" slot. Density is moderate: generous section spacing, compact card internals. Motion is one idea — cards are dealt into place and the language card turns — and nothing else moves.\n\nThe world rejects the default kids'-product landing: no icon-benefit grids, no cartoon confetti, no testimonial slider, no cream paper. Bashkir letters (Ә Ө Ү Ғ Ҡ Ң Ҙ Ҫ Һ) are the only ornament-scale type.",
     "keyCharacteristics": [
       "White card stock with an inset keyline on a saturated green field",
       "Index tabs (rounded top corners only) as the navigation and filter grammar",
       "Primer slab display (Podkova) over a civic text face (Golos Text); both cover Bashkir and Tatar letters",
-      "Yellow means \"act\": primary buttons, the \"+\" language slot, the contact card",
+      "Ivory means \"act\": primary buttons, the \"+\" language slot, the contact card",
       "Slight card rotation (−2.5° to 2°) for physical, hand-laid placement"
     ],
     "rules": [
       {
-        "name": "The Yellow Means Act Rule",
-        "body": "Yellow appears only where the visitor can act or where a language is missing (\"+ ваш язык\"). Never as a background for reading content other than the kits and contact cards.",
+        "name": "The Ivory Means Act Rule",
+        "body": "Ivory appears only where the visitor can act or where a language is missing (\"+ ваш язык\"). Never as a background for reading content other than the kits and contact cards.",
         "section": "colors"
       },
       {
@@ -370,10 +370,10 @@
       }
     ],
     "dos": [
-      "Do lay green as whole sections (#0E7A41) and put white cards on it.",
+      "Do lay green as whole sections (#247F55) and put white cards on it.",
       "Do keep every card's inset keyline (12px in, 1.5px, green at ~30% alpha) — it is what makes a rectangle a didactic card.",
       "Do write language codes and words in their own script, with lang attributes (ru, ba, tt, en, uz, kk, be).",
-      "Do use yellow (#FFBB10) for the next action and for missing-language slots only.",
+      "Do use ivory (#F4ECDC) for the next action and for missing-language slots only.",
       "Do keep motion to the deal (rise + slight rotation settle, 0.8s exponential ease-out) and the card flip; honour prefers-reduced-motion by removing both."
     ],
     "donts": [
