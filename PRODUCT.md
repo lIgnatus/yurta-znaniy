@@ -27,7 +27,7 @@ Games are developed by ООО «АленМарт» with Akmulla Bashkir State Pe
 ## Operating Context
 
 - Elena presents the project at international forums in Kazakhstan, Belarus and Uzbekistan within business missions of the RB Ministry of Foreign Economic Relations.
-- Where the products are sold: alenmart.ru (online shop of ООО «АленМарт»); publishers «Просвещение», «Мозаика-Синтез», «Китап»; souvenir salons «Агидель» (ГУП БХП); Ufa retail stores «Эдвис», «Юные таланты»; online shops «Семь гномов», «Читай-играй»; marketplaces.
+- Where the products are sold: alenmart.ru (online shop of ООО «АленМарт»); publishers «Просвещение», «Мозаика-Синтез», «Китап»; souvenir salons «Агидель» (ГУП БХП); the shop «Читай-играй»; marketplaces. «Эдвис», «Юные таланты» and «Семь гномов» are off the site until Elena confirms them: 2GIS shows the first two as closed or unfound, no shop was found for the third, and 7-gnomov.ru is an online casino, so never link it.
 - Institutional kits from the booklet: «Детский сад» — 7000 ₽, «Школа» — 8700 ₽.
 - The speech asks partners to help create new games, adapt the methodology to other regions and languages, and scale the collection: "one region, one people, one culture — one shared value, respect for each other".
 
@@ -46,7 +46,7 @@ Games are developed by ООО «АленМарт» with Akmulla Bashkir State Pe
 - Motto «Играя — изучай свой край!».
 - Packaging language: white boxes, green leafy ornamental frame, red titles.
 - User request: borrow shades from alenmart.ru (red #EB3C3C, green #00AF53), but the result must be far more modern and clearer than that site.
-- Client edits of 02.11.2026 (binding): no orange in panels or site styling, use ivory with a light beige tone (illustrations such as the marten stay as drawn); green a little lighter and more pastel but still the brand green, not pale; the wordmark in capitals in one font; the heading "Елена Нагимова, автор проекта" in green; the client's own logo top left.
+- Client edits of 02.11.2026 (binding, the second round replaces the first where they differ): a golden accent (#F2BE5C) instead of ivory, which looked dull; a saturated green (#0F8049); illustrations such as the marten stay as drawn; the wordmark in capitals in one font; the heading "Елена Нагимова, автор проекта" in green; the client's own logo top left; a centred top panel; document carousels on two levels; team as short name-and-role chips with a card that slides out on click.
 
 ## Evidence on Hand
 

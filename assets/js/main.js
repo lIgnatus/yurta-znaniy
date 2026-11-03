@@ -124,55 +124,84 @@
     new ResizeObserver(update).observe(track);
   });
 
-  /* ---------- Team: the author card turns to the chosen person ---------- */
+  /* ---------- Team: a card slides up out of the row ---------- */
   const team = document.querySelector("[data-team]");
-  const people = [...document.querySelectorAll(".person")];
-  if (team && people.length) {
-    const photo = team.querySelector("[data-team-photo]");
-    const img = photo.querySelector("img");
-    const mono = photo.querySelector("[data-team-mono]");
-    const text = team.querySelector(".author__text");
-    const name = team.querySelector("[data-team-name]");
-    const role = team.querySelector("[data-team-role]");
-    const bio = team.querySelector("[data-team-bio]");
-    const story = team.querySelector("[data-team-story]");
-    let busy = false;
+  if (team) {
+    const people = [...team.querySelectorAll(".person")];
+    const track = team.querySelector(".carousel__track");
+    const card = team.querySelector(".person-card");
+    const photo = card.querySelector("[data-card-photo]");
+    const name = card.querySelector("[data-card-name]");
+    const role = card.querySelector("[data-card-role]");
+    const bio = card.querySelector("[data-card-bio]");
+    let active = null, run = 0;
+
+    const slide = (keyframes, duration, easing) => {
+      if (reduceMotion.matches || !card.animate) return Promise.resolve();
+      return card.animate(keyframes, { duration, easing }).finished.catch(() => {});
+    };
+    const slideOut = (duration = 200) => slide([{ transform: "none" }, { transform: "translateY(100%)" }], duration, "cubic-bezier(.55, 0, .8, .2)");
+    const slideIn = () => slide([{ transform: "translateY(100%)" }, { transform: "none" }], 560, easeOut);
+    const mark = (person) => people.forEach((p) => p.setAttribute("aria-expanded", String(p === person)));
 
     // A photo goes live once its path is written in data-photo; until then the card shows initials.
-    people.forEach((person) => {
-      const slot = person.querySelector(".person__photo");
-      if (!person.dataset.photo || slot.querySelector("img")) return;
-      slot.replaceChildren(Object.assign(new Image(), { src: person.dataset.photo, alt: "", loading: "lazy", decoding: "async" }));
-    });
-
-    const render = (person) => {
-      const src = person.dataset.photo;
+    const fill = (person) => {
       const fullName = person.querySelector(".person__name").textContent;
-      const isAuthor = person.hasAttribute("data-author");
-      img.hidden = !src;
-      if (src) { img.src = src; img.alt = fullName; }
-      mono.hidden = Boolean(src);
-      mono.textContent = person.querySelector(".person__mono")?.textContent || "";
-      name.textContent = person.dataset.title || fullName;
-      role.hidden = isAuthor;
-      role.textContent = person.querySelector(".person__role").textContent;
-      bio.hidden = !person.dataset.bio;
+      const mono = Object.assign(document.createElement("span"), { className: "person-card__mono", textContent: person.dataset.initials });
+      const img = Object.assign(new Image(), { src: person.dataset.photo, alt: fullName });
+      photo.replaceChildren(person.dataset.photo ? img : mono);
+      name.textContent = fullName;
+      role.textContent = person.dataset.full;
       bio.textContent = person.dataset.bio || "";
-      story.hidden = !isAuthor;
+      bio.hidden = !person.dataset.bio;
+    };
+    const place = (person) => {
+      const box = team.getBoundingClientRect();
+      const chip = person.getBoundingClientRect();
+      const x = chip.left - box.left + chip.width / 2 - card.offsetWidth / 2;
+      card.style.setProperty("--card-x", `${Math.max(0, Math.min(x, box.width - card.offsetWidth))}px`);
+    };
+    const keepInView = () => {
+      const top = card.getBoundingClientRect().top - document.querySelector(".site-header").offsetHeight - 12;
+      if (top < 0) window.scrollBy({ top, behavior: reduceMotion.matches ? "auto" : "smooth" });
+    };
+    const close = async () => {
+      if (!active) return;
+      const id = ++run;
+      active = null;
+      mark(null);
+      await slideOut();
+      if (id === run) card.hidden = true;
+    };
+    const open = async (person) => {
+      const swapping = Boolean(active);
+      const id = ++run;
+      active = person;
+      mark(person);
+      if (swapping) await slideOut(130);
+      if (id !== run) return;
+      fill(person);
+      card.hidden = false;
+      place(person);
+      keepInView();
+      await slideIn();
     };
 
-    people.forEach((person) => person.addEventListener("click", async () => {
-      if (busy || person.classList.contains("is-active")) return;
-      people.forEach((p) => {
-        p.classList.toggle("is-active", p === person);
-        p.setAttribute("aria-pressed", String(p === person));
-      });
-      // Side by side, keep the strip below still when short text replaces the long author story.
-      if (window.matchMedia("(min-width: 901px)").matches && !text.style.minHeight) text.style.minHeight = `${text.offsetHeight}px`;
-      busy = true;
-      await flip(photo, () => render(person));
-      busy = false;
-    }));
+    people.forEach((person) => person.addEventListener("click", () => (person === active ? close() : open(person))));
+    card.querySelector(".person-card__close").addEventListener("click", () => {
+      const person = active;
+      close();
+      person?.focus();
+    });
+    document.addEventListener("click", (e) => { if (active && !e.target.closest(".person, .person-card")) close(); });
+    document.addEventListener("keydown", (e) => {
+      if (e.key !== "Escape" || !active) return;
+      const person = active;
+      close();
+      person.focus();
+    });
+    track.addEventListener("scroll", () => { if (active) place(active); }, { passive: true });
+    window.addEventListener("resize", () => { if (active) place(active); });
   }
 
   /* ---------- Documents: full-size viewer, paged within one carousel ---------- */
