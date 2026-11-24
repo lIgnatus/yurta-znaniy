@@ -211,6 +211,8 @@
     const cap = dialog.querySelector(".lightbox__cap");
     const captionText = cap.querySelector("[data-doc-caption]");
     const read = cap.querySelector(".lightbox__read");
+    const sources = cap.querySelector(".lightbox__sources");
+    const original = sources.querySelector(".lightbox__original");
     const decision = document.querySelector("#method .decision").cloneNode(true);
     decision.id = "decision-reading";
     decision.hidden = true;
@@ -224,17 +226,20 @@
       img.hidden = reading;
       decision.hidden = !reading;
       read.setAttribute("aria-expanded", String(reading));
-      read.textContent = reading ? "Посмотреть скан" : "Читать решение";
+      read.textContent = reading ? "Посмотреть выписку" : "Читать решение";
     };
     read.addEventListener("click", () => setReading(decision.hidden));
     const show = (i) => {
       current = (i + group.length) % group.length;
       const a = group[current];
+      const hasReadingCopy = a.hasAttribute("data-decision");
+      const thumbnail = a.querySelector("img");
       img.removeAttribute("src");
-      img.src = a.getAttribute("href");
-      img.alt = a.querySelector("img")?.alt || "";
+      img.src = hasReadingCopy ? thumbnail.src : a.href;
+      img.alt = thumbnail?.alt || "";
       captionText.textContent = a.dataset.caption || "";
-      read.hidden = !a.hasAttribute("data-decision");
+      sources.hidden = read.hidden = !hasReadingCopy;
+      if (hasReadingCopy) original.href = a.href;
       setReading(false);
     };
     docs.forEach((a) => a.addEventListener("click", (e) => {

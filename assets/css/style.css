@@ -350,7 +350,10 @@ p, li, dd { text-wrap: pretty; }
 .lightbox__figure { display: grid; justify-items: center; gap: .9rem; padding: 56px 64px 24px; }
 .lightbox__img { max-height: calc(100dvh - 140px); width: auto; border-radius: 4px; box-shadow: 0 30px 60px -20px rgba(0, 0, 0, .6); background: #fff; }
 .lightbox__cap { max-width: 44em; text-align: center; font-size: .9375rem; color: var(--on-green-2); }
-.lightbox__read { display: block; margin: .5rem auto 0; min-height: 44px; padding: .4rem 1rem; border: 0; border-radius: 999px; background: var(--beige); color: var(--ink); font: inherit; font-weight: 700; cursor: pointer; }
+.lightbox__sources { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .25rem 1rem; margin-top: .5rem; }
+.lightbox__original { display: inline-flex; align-items: center; min-height: 44px; color: white; }
+.lightbox__original:focus-visible { outline-color: white; }
+.lightbox__read { display: block; min-height: 44px; padding: .4rem 1rem; border: 0; border-radius: 999px; background: var(--beige); color: var(--ink); font: inherit; font-weight: 700; cursor: pointer; }
 .lightbox__read:focus-visible { outline-color: #fff; }
 .lightbox__figure:has(.lightbox__read:not([hidden])) { width: 100%; max-height: 100dvh; overflow-y: auto; }
 .lightbox__figure:has(.lightbox__read:not([hidden])) .lightbox__img { width: auto; max-height: calc(100dvh - 240px); object-fit: contain; }
