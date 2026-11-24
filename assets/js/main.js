@@ -209,19 +209,33 @@
   const docs = [...document.querySelectorAll("[data-lightbox]")];
   if (dialog && typeof dialog.showModal === "function" && docs.length) {
     const cap = dialog.querySelector(".lightbox__cap");
+    const captionText = cap.querySelector("[data-doc-caption]");
+    const read = cap.querySelector(".lightbox__read");
+    const decision = document.querySelector("#method .decision").cloneNode(true);
+    decision.id = "decision-reading";
+    decision.hidden = true;
     const prev = dialog.querySelector(".lightbox__prev");
     const next = dialog.querySelector(".lightbox__next");
     const img = document.createElement("img"); // created here so the page never ships an <img> without a source
     img.className = "lightbox__img";
-    cap.before(img);
+    cap.before(img, decision);
     let group = [], current = 0;
+    const setReading = (reading) => {
+      img.hidden = reading;
+      decision.hidden = !reading;
+      read.setAttribute("aria-expanded", String(reading));
+      read.textContent = reading ? "Посмотреть скан" : "Читать решение";
+    };
+    read.addEventListener("click", () => setReading(decision.hidden));
     const show = (i) => {
       current = (i + group.length) % group.length;
       const a = group[current];
       img.removeAttribute("src");
       img.src = a.getAttribute("href");
       img.alt = a.querySelector("img")?.alt || "";
-      cap.textContent = a.dataset.caption || "";
+      captionText.textContent = a.dataset.caption || "";
+      read.hidden = !a.hasAttribute("data-decision");
+      setReading(false);
     };
     docs.forEach((a) => a.addEventListener("click", (e) => {
       e.preventDefault();

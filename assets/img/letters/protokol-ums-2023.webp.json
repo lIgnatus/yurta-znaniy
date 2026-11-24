@@ -1,4 +1,4 @@
 {
-  "prompt": "Origin (sourced, not generated): protocol extract image from the client's booklet «ЮРТА ЗНАНИЙ_compressed.pdf», page 6 (low-resolution source).",
+  "prompt": "Origin (sourced, not generated): protocol extract image from the client's booklet «ЮРТА ЗНАНИЙ_compressed.pdf», page 6. Exported the embedded scan at native resolution, cropped to the paper and encoded losslessly.",
   "createdAt": "2026-10-27T14:34:47.056Z"
 }
