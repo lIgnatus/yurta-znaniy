@@ -16,13 +16,21 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://lignatus.github.io/yurta-znaniy/">
+  <link rel="alternate" hreflang="ru" href="https://lignatus.github.io/yurta-znaniy/">
+  <link rel="alternate" hreflang="ba" href="https://lignatus.github.io/yurta-znaniy/ba.html">
+  <link rel="alternate" hreflang="tt" href="https://lignatus.github.io/yurta-znaniy/tt.html">
+  <link rel="alternate" hreflang="en" href="https://lignatus.github.io/yurta-znaniy/en.html">
+  <link rel="alternate" hreflang="uz" href="https://lignatus.github.io/yurta-znaniy/uz.html">
+  <link rel="alternate" hreflang="kk" href="https://lignatus.github.io/yurta-znaniy/kk.html">
+  <link rel="alternate" hreflang="be" href="https://lignatus.github.io/yurta-znaniy/be.html">
+  <link rel="alternate" hreflang="x-default" href="https://lignatus.github.io/yurta-znaniy/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon.png" type="image/png" sizes="64x64">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preload" href="assets/fonts/podkova-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/golos-text-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/style.css?v=ca47e1a7">
-  <script src="assets/js/main.js?v=dd2eccca" defer></script>
+  <link rel="stylesheet" href="assets/css/style.css?v=lang-20261125">
+  <script src="assets/js/main.js?v=languages1" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Перейти к содержанию</a>
@@ -82,25 +90,25 @@
         </div>
 
         <div class="langcard" data-langcard>
-          <div class="langcard__tabs" role="tablist" aria-label="Слово «семья» на разных языках">
-            <button class="tab" role="tab" id="lt-ru" aria-selected="true" aria-controls="lc-panel" data-word="СЕМЬЯ" data-lang="ru" data-name="русский язык" data-status="в продаже">Рус</button>
-            <button class="tab" role="tab" id="lt-ba" aria-selected="false" aria-controls="lc-panel" tabindex="-1" data-word="ҒАИЛӘ" data-lang="ba" data-name="башҡорт теле" data-status="в продаже">Баш</button>
-            <button class="tab" role="tab" id="lt-tt" aria-selected="false" aria-controls="lc-panel" tabindex="-1" data-word="ГАИЛӘ" data-lang="tt" data-name="татар теле" data-status="в продаже">Тат</button>
-            <button class="tab" role="tab" id="lt-en" aria-selected="false" aria-controls="lc-panel" tabindex="-1" data-word="FAMILY" data-lang="en" data-name="English" data-status="в продаже">Eng</button>
-            <button class="tab" role="tab" id="lt-uz" aria-selected="false" aria-controls="lc-panel" tabindex="-1" data-word="OILA" data-lang="uz" data-name="oʻzbek tili" data-status="в работе">Oʻzb</button>
-            <button class="tab" role="tab" id="lt-kk" aria-selected="false" aria-controls="lc-panel" tabindex="-1" data-word="ОТБАСЫ" data-lang="kk" data-name="қазақ тілі" data-status="в работе">Қаз</button>
-            <button class="tab" role="tab" id="lt-be" aria-selected="false" aria-controls="lc-panel" tabindex="-1" data-word="СЯМ’Я" data-lang="be" data-name="беларуская мова" data-status="в работе">Бел</button>
-            <button class="tab tab--plus" role="tab" id="lt-plus" aria-selected="false" aria-controls="lc-panel" tabindex="-1" data-plus aria-label="Ваш язык"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
-          </div>
+          <nav class="langcard__tabs" aria-label="Язык сайта">
+            <a class="tab" id="lt-ru" href="index.html" hreflang="ru" lang="ru" aria-label="русский язык" title="русский язык" data-word="СЕМЬЯ" data-status="в продаже" aria-current="page">Рус</a>
+            <a class="tab" id="lt-ba" href="ba.html" hreflang="ba" lang="ba" aria-label="башҡорт теле" title="башҡорт теле" data-word="ҒАИЛӘ" data-status="в продаже">Баш</a>
+            <a class="tab" id="lt-tt" href="tt.html" hreflang="tt" lang="tt" aria-label="татар теле" title="татар теле" data-word="ГАИЛӘ" data-status="в продаже">Тат</a>
+            <a class="tab" id="lt-en" href="en.html" hreflang="en" lang="en" aria-label="English" title="English" data-word="FAMILY" data-status="в продаже">Eng</a>
+            <a class="tab" id="lt-uz" href="uz.html" hreflang="uz" lang="uz" aria-label="oʻzbek tili" title="oʻzbek tili" data-word="OILA" data-in-development data-status="в работе">Oʻzb</a>
+            <a class="tab" id="lt-kk" href="kk.html" hreflang="kk" lang="kk" aria-label="қазақ тілі" title="қазақ тілі" data-word="ОТБАСЫ" data-in-development data-status="в работе">Қаз</a>
+            <a class="tab" id="lt-be" href="be.html" hreflang="be" lang="be" aria-label="беларуская мова" title="беларуская мова" data-word="СЯМ’Я" data-in-development data-status="в работе">Бел</a>
+            <button class="tab tab--plus" type="button" id="lt-plus" aria-expanded="false" aria-controls="lc-plus" data-plus aria-label="Ваш язык"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
+          </nav>
           <div class="langcard__deck" aria-hidden="true"><span></span><span></span></div>
-          <div class="langcard__card" id="lc-panel" role="tabpanel" aria-labelledby="lt-ru">
+          <div class="langcard__card" id="lc-panel">
             <div class="langcard__face">
               <p class="langcard__word" lang="ru" data-word>СЕМЬЯ</p>
               <p class="langcard__name"><span data-name>русский язык</span><span class="status" data-status>в продаже</span></p>
               <p class="langcard__note"><strong>Карточки «Семья»:</strong> 12&nbsp;карточек, на&nbsp;обороте стихи и&nbsp;загадки на&nbsp;трёх языках</p>
               <img class="langcard__art" src="assets/img/brand/yurta-deti-sm.webp" alt="" width="385" height="440">
             </div>
-            <div class="langcard__plus" hidden>
+            <div class="langcard__plus" id="lc-plus" hidden>
               <p class="langcard__word langcard__word--plus">Ваш язык?</p>
               <p class="langcard__plus-text">Сделаем такие же игры для вашего народа и&nbsp;региона: язык, история, орнамент, праздники.</p>
               <a class="btn btn--ink" href="#partners">Обсудить с&nbsp;Еленой</a>
@@ -654,7 +662,7 @@
       <figcaption class="lightbox__cap">
         <span data-doc-caption></span>
         <span class="lightbox__sources" hidden>
-          <button class="lightbox__read" type="button" aria-controls="decision-reading" aria-expanded="false" hidden>Читать решение</button>
+          <button class="lightbox__read" type="button" data-read="Читать решение" data-view="Посмотреть выписку" aria-controls="decision-reading" aria-expanded="false" hidden>Читать решение</button>
           <a class="lightbox__original" target="_blank" rel="noopener">Исходный скан</a>
         </span>
       </figcaption>

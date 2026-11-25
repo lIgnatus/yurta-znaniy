@@ -3,76 +3,40 @@
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const easeOut = "cubic-bezier(.16, 1, .3, 1)";
 
-  // Turns a card over; `swap` runs while the card is edge-on.
-  const flip = async (card, swap) => {
-    if (reduceMotion.matches || !card.animate) { swap(); return; }
-    await card.animate([{ transform: "rotateY(0deg)" }, { transform: "rotateY(90deg)" }], { duration: 160, easing: "cubic-bezier(.55, 0, .8, .2)" }).finished;
-    swap();
-    await card.animate([{ transform: "rotateY(-90deg)" }, { transform: "rotateY(0deg)" }], { duration: 460, easing: easeOut }).finished;
-  };
-
-  /* ---------- Hero card: one word, many languages ---------- */
+  // The seven languages are ordinary page links. Only the partner invitation
+  // changes the face of the card without leaving the current language.
   const langcard = document.querySelector("[data-langcard]");
   if (langcard) {
-    const tabs = [...langcard.querySelectorAll('[role="tab"]')];
-    const panel = langcard.querySelector('[role="tabpanel"]');
+    const panel = langcard.querySelector("#lc-panel");
     const face = panel.querySelector(".langcard__face");
-    const plus = panel.querySelector(".langcard__plus");
-    const word = panel.querySelector("[data-word]");
-    const name = panel.querySelector("[data-name]");
-    const status = panel.querySelector("[data-status]");
-    let index = 0, pending = null, busy = false, timer = null, stopped = false, inView = false;
-
-    const render = (tab) => {
-      const isPlus = tab.hasAttribute("data-plus");
-      face.hidden = isPlus;
-      plus.hidden = !isPlus;
-      panel.classList.toggle("is-plus", isPlus);
-      panel.setAttribute("aria-labelledby", tab.id);
-      if (isPlus) return;
-      word.textContent = tab.dataset.word;
-      word.lang = name.lang = tab.dataset.lang;
-      name.textContent = tab.dataset.name;
-      status.textContent = tab.dataset.status;
-      status.classList.toggle("is-wip", tab.dataset.status !== "в продаже");
-    };
-
-    const select = async (i, focus = false) => {
-      if (busy) { pending = i; return; }
-      if (i === index) return;
-      index = i;
-      tabs.forEach((t, k) => { t.setAttribute("aria-selected", String(k === i)); t.tabIndex = k === i ? 0 : -1; });
-      if (focus) tabs[i].focus();
-      busy = true;
-      try {
-        await flip(panel, () => render(tabs[i]));
-      } finally {
-        busy = false;
-        if (pending !== null) { const p = pending; pending = null; select(p); }
-      }
-    };
-
-    const schedule = () => {
-      clearTimeout(timer);
-      if (stopped || !inView || document.hidden || reduceMotion.matches) return;
-      const onPlus = tabs[index].hasAttribute("data-plus");
-      timer = setTimeout(async () => { await select((index + 1) % tabs.length); schedule(); }, onPlus ? 4200 : 2400);
-    };
-    const takeOver = () => { stopped = true; clearTimeout(timer); };
-
-    tabs.forEach((tab, i) => tab.addEventListener("click", () => { takeOver(); select(i); }));
-    langcard.querySelector('[role="tablist"]').addEventListener("keydown", (e) => {
-      const keys = { ArrowRight: index + 1, ArrowLeft: index - 1, Home: 0, End: tabs.length - 1 };
-      if (!(e.key in keys)) return;
-      e.preventDefault();
-      takeOver();
-      select((keys[e.key] + tabs.length) % tabs.length, true);
+    const invitation = panel.querySelector(".langcard__plus");
+    const plus = langcard.querySelector("[data-plus]");
+    plus.addEventListener("click", () => {
+      const open = invitation.hidden;
+      invitation.hidden = !open;
+      face.hidden = open;
+      plus.setAttribute("aria-expanded", String(open));
+      panel.classList.toggle("is-plus", open);
     });
-    langcard.addEventListener("pointerenter", () => clearTimeout(timer));
-    langcard.addEventListener("pointerleave", schedule);
-    langcard.addEventListener("focusin", () => clearTimeout(timer));
-    document.addEventListener("visibilitychange", schedule);
-    new IntersectionObserver(([en]) => { inView = en.isIntersecting; inView ? schedule() : clearTimeout(timer); }, { threshold: .4 }).observe(langcard);
+
+    const languageLinks = [...langcard.querySelectorAll("a[hreflang]")];
+    const keepSection = () => {
+      languageLinks.forEach((link) => {
+        link.hash = location.hash;
+        link.search = location.search;
+      });
+    };
+    keepSection();
+    window.addEventListener("hashchange", keepSection);
+    const controls = [...languageLinks, plus];
+    langcard.querySelector("nav").addEventListener("keydown", (event) => {
+      const index = controls.indexOf(event.target);
+      if (index < 0) return;
+      const targets = { ArrowRight: index + 1, ArrowLeft: index - 1, Home: 0, End: controls.length - 1 };
+      if (!Object.hasOwn(targets, event.key)) return;
+      event.preventDefault();
+      controls[(targets[event.key] + controls.length) % controls.length].focus();
+    });
   }
 
   /* ---------- Catalogue filter by language ---------- */
@@ -226,7 +190,7 @@
       img.hidden = reading;
       decision.hidden = !reading;
       read.setAttribute("aria-expanded", String(reading));
-      read.textContent = reading ? "Посмотреть выписку" : "Читать решение";
+      read.textContent = reading ? read.dataset.view : read.dataset.read;
     };
     read.addEventListener("click", () => setReading(decision.hidden));
     const show = (i) => {

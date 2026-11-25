@@ -140,13 +140,13 @@ p, li, dd { text-wrap: pretty; }
 .langcard { grid-area: card; align-self: center; position: relative; width: min(100%, 500px); justify-self: center; padding-top: 44px; transform: rotate(-2.5deg); perspective: 1400px; }
 .langcard__tabs { position: absolute; top: 0; left: 18px; right: 18px; display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; }
 .langcard__tabs::-webkit-scrollbar { display: none; }
-.langcard__tabs .tab { flex: none; min-height: 44px; padding-inline: .75rem; background: rgba(255, 255, 255, .16); color: #fff; }
+.langcard__tabs .tab { text-decoration: none; flex: none; min-height: 44px; padding-inline: .75rem; background: rgba(255, 255, 255, .16); color: #fff; }
 .langcard__tabs .tab:hover { background: rgba(255, 255, 255, .28); }
-.langcard__tabs .tab[aria-selected="true"] { background: var(--card); color: var(--green); }
+.langcard__tabs .tab[aria-current="page"] { background: var(--card); color: var(--green); }
 .langcard__tabs .tab--plus { min-width: 44px; justify-content: center; background: var(--beige); color: var(--ink); }
 .tab--plus .icon { stroke-width: 2.6; }
 .langcard__tabs .tab--plus:hover { background: var(--beige-light); }
-.langcard__tabs .tab--plus[aria-selected="true"] { background: var(--card); color: var(--ink); }
+.langcard__tabs .tab--plus[aria-expanded="true"] { background: var(--card); color: var(--ink); }
 .langcard__deck span { position: absolute; inset: 44px 0 0; border-radius: var(--radius); background: #fff; box-shadow: var(--shadow-card); }
 .langcard__deck span:first-child { transform: rotate(5deg) translate(14px, 10px); opacity: .55; }
 .langcard__deck span:last-child { transform: rotate(2.5deg) translate(6px, 4px); opacity: .8; }
@@ -157,7 +157,7 @@ p, li, dd { text-wrap: pretty; }
 .langcard__name { margin-top: .9rem; display: flex; flex-wrap: wrap; align-items: center; gap: .5rem .75rem; font-size: 1.0625rem; font-weight: 600; color: var(--ink-2); }
 .status { display: inline-flex; align-items: center; padding: .2rem .6rem; border-radius: 999px; font-size: .75rem; font-weight: 700; letter-spacing: .03em; background: var(--green-soft); color: var(--green-deep); }
 .status.is-wip { background: var(--beige-soft); color: #5E4B22; }
-.langcard__note { margin-top: auto; max-width: 14em; padding-top: 1.5rem; font-size: .9375rem; line-height: 1.45; color: var(--ink-2); position: relative; z-index: 1; }
+.langcard__note { margin-top: auto; max-width: min(14em, 45%); padding-top: 1.5rem; font-size: .9375rem; line-height: 1.45; color: var(--ink-2); position: relative; z-index: 1; }
 .langcard__note strong { display: block; color: var(--green); font-weight: 700; }
 .langcard__art { position: absolute; right: clamp(.6rem, 2vw, 1.4rem); bottom: clamp(.6rem, 1.6vw, 1.2rem); width: clamp(140px, 13vw + 50px, 236px); height: auto; }
 .langcard__plus { align-items: flex-start; justify-content: center; gap: 1.2rem; background: var(--beige); border-radius: inherit; }
@@ -381,15 +381,15 @@ p, li, dd { text-wrap: pretty; }
 @media (max-width: 1080px) {
   .site-nav a { padding-inline: .65rem; font-size: .875rem; }
   .brand__sub { display: none; }
-}
-@media (max-width: 900px) {
   :root { --header-h: 116px; }
   .site-header__bar { grid-template-columns: 1fr auto; gap: 0 1rem; min-height: 0; padding-top: 10px; }
   .site-nav { grid-column: 1 / -1; order: 3; margin: 8px calc(-1 * var(--gutter)) 0; padding: 0 var(--gutter) 8px; overflow-x: auto; scrollbar-width: none; -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent); }
   .site-nav::-webkit-scrollbar { display: none; }
   .site-nav ul { flex-wrap: nowrap; padding-right: 28px; }
   .site-nav li { flex: none; }
-  .hero__grid { grid-template-columns: 1fr; grid-template-areas: "head" "card" "body"; row-gap: 1.75rem; }
+}
+@media (max-width: 900px) {
+  .hero__grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "head" "card" "body"; row-gap: 1.75rem; }
   .project__grid, .method__grid, .partners__grid, .author__grid { grid-template-columns: 1fr; }
   .langcard { margin-block: .25rem .75rem; }
   .method__doc { max-width: 360px; }
@@ -413,8 +413,8 @@ p, li, dd { text-wrap: pretty; }
   .langcard__tabs .tab--plus { min-width: 36px; }
   .langcard__deck span { inset: 40px 0 0; }
   .langcard__card { min-height: 360px; }
-  .langcard__art { width: 128px; }
-  .langcard__note { max-width: 11.5em; font-size: .875rem; }
+  .langcard__art { width: min(128px, 40%); }
+  .langcard__note { max-width: min(11.5em, 55%); font-size: .875rem; }
 
   /* catalogue: compact rows instead of 18 full-height cards */
   .games__grid { gap: 10px; }
